@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="sem-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estância das Águas</title>
+<meta name="description" content="Day use, hospedagem, eventos e retiros com piscinas, tobogã e coqueiros na Praia do Sul, km 11, em Ilhéus, Bahia. Reserve pelo WhatsApp.">
+<meta name="theme-color" content="#0B2A5B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Estância das Águas","description":"Pousada com parque aquático: day use, hospedagem, eventos e retiros em Ilhéus, Bahia.","address":{"@type":"PostalAddress","streetAddress":"Praia do Sul, km 11","addressLocality":"Ilhéus","addressRegion":"BA","addressCountry":"BR"},"telephone":"+55 73 99150-0002","sameAs":["https://www.instagram.com/pousada.estanciadasaguas/"]}
+</script>
+<style>
+/* Paleta e tipografia da logo "Tobogã do Sol". Layout: passeio em tela cheia guiado pelo scroll, depois seções de decisão em fundo claro. */
+:root{
+  --marinho:#0B2A5B;
+  --azul:#0E6BD8;
+  --turquesa:#19C3D6;
+  --sol:#FFC21A;
+  --laranja:#FF7A2F;
+  --areia:#FFF7EA;
+  --suave:#3D4F6E;
+  --linha:rgb(11 42 91 / 0.12);          /* 2. borda translúcida: se adapta ao fundo claro, branco ou creme */
+  --linha-campo:rgb(11 42 91 / 0.5);     /* campos: contraste 3:1 exigido para bordas de formulário */
+  /* tons claros derivados (reserva em hex; em OKLCH logo abaixo) */
+  --claro-sol:#FFF0C2;
+  --claro-turquesa:#D5F3F7;
+  --claro-laranja:#FFE3D2;
+  --claro-azul:#DCE8FB;
+  --claro-areia:#FBF2E1;
+  --sol-hover:#FFD24D;
+  --marinho-elevado:#16386F;
+  --azul-profundo:#123C80;
+  --branco:#FFFFFF;
+  --f-display:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-corpo:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --raio:18px;
+  --topo:72px;
+  color-scheme:light;
+}
+/* 3. Paleta em OKLCH: mesmas cores da logo, e os tons claros com a MESMA luminosidade percebida */
+@supports (color: oklch(0% 0 0)){
+  :root{
+    --marinho:oklch(29.5% 0.095 259.5);
+    --azul:oklch(54.3% 0.185 257);
+    --turquesa:oklch(74.8% 0.125 207.5);
+    --sol:oklch(84.6% 0.169 84.9);
+    --laranja:oklch(72.5% 0.182 46);
+    --areia:oklch(97.9% 0.019 80.1);
+    --suave:oklch(42.6% 0.057 261);
+    --claro-sol:oklch(95% 0.06 84.9);
+    --claro-turquesa:oklch(95% 0.035 207.5);
+    --claro-laranja:oklch(95% 0.035 46);
+    --claro-azul:oklch(95% 0.03 257);
+    --claro-areia:oklch(96.5% 0.025 80.1);
+    --sol-hover:oklch(88.5% 0.15 84.9);
+    --marinho-elevado:oklch(35% 0.1 259.5);
+    --azul-profundo:oklch(40% 0.14 258);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:var(--topo)}
+body{margin:0;background:var(--areia);color:var(--marinho);font-family:var(--f-corpo);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:var(--azul)}
+a:hover{color:var(--marinho)}
+:focus-visible{outline:3px solid var(--sol);outline-offset:3px;border-radius:6px}
+.container{width:min(1120px,100% - 32px);margin-inline:auto}
+.icone{width:22px;height:22px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:var(--traco,2);stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Botões */
+/* Botões: cantos de 16px, peso 800, leve crescimento no hover e "aperto" no toque (inspirados na referência) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:16px;border:0;font:800 16px/1 var(--f-corpo);letter-spacing:-0.01em;text-decoration:none;cursor:pointer;transition:transform .2s ease,background-color .2s ease,color .2s ease,box-shadow .2s ease}
+.btn:hover{transform:translateY(-1px) scale(1.02)}
+.btn:active{transform:scale(.97)}
+.seta{transition:transform .25s ease}
+.btn:hover .seta,.pilula:hover .seta{transform:translateX(4px)}
+.btn-sol{background:var(--sol);color:var(--marinho);box-shadow:0 10px 24px -10px rgb(255 122 47 / .6)}
+.btn-sol:hover{background:var(--sol-hover);color:var(--marinho)}
+/* vidro: sobre o vídeo; fica sólido no hover */
+.btn-vidro{background:rgb(255 255 255 / .12);color:var(--branco);border:1px solid rgb(255 255 255 / .3);border-radius:999px;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.btn-vidro:hover{background:var(--branco);color:var(--marinho)}
+.btn-marinho{background:var(--marinho);color:var(--branco)}
+.btn-marinho:hover{background:var(--marinho-elevado);color:var(--branco)}
+.btn-contorno{background:var(--branco);color:var(--marinho);border:2px solid var(--marinho)}
+.btn-contorno:hover{background:var(--marinho);color:var(--branco)}
+.btn-contorno-claro{background:transparent;color:var(--branco);border:2px solid rgb(255 255 255 / .7)}
+.btn-contorno-claro:hover{background:var(--branco);color:var(--marinho)}
+.btn-caixa{font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+/* pílula: links secundários */
+.pilula{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 16px;border-radius:999px;background:rgb(11 42 91 / .08);color:var(--marinho);font:700 14px/1 var(--f-corpo);text-decoration:none;transition:background-color .2s ease,color .2s ease}
+.pilula:hover{background:rgb(11 42 91 / .14);color:var(--azul)}
+.pilula .icone{width:18px;height:18px;--traco:2.4}
+
+/* Topo */
+/* Topo: transparente sobre o vídeo; depois do passeio vira uma barra sólida da cor da marca */
+.topo{position:fixed;inset:0 0 auto 0;z-index:30;height:var(--topo);display:flex;align-items:center;transition:background-color .3s ease,box-shadow .3s ease}
+.topo .container{display:flex;align-items:center;gap:24px}
+.topo .marca{display:block;width:196px;flex:0 0 auto;transition:opacity .2s ease}
+.topo .marca:hover{opacity:.88}
+.topo .marca img{width:100%;height:auto}
+/* menu centralizado, negrito; a seção atual ganha uma barra em degradê embaixo */
+.topo nav{flex:1;display:flex;justify-content:center;gap:28px}
+.topo nav a{position:relative;color:rgb(255 255 255 / .72);text-decoration:none;font-weight:700;font-size:14.5px;letter-spacing:-0.02em;padding:10px 0;transition:color .2s ease}
+.topo nav a:hover,.topo nav a[aria-current="true"]{color:var(--branco)}
+.topo nav a::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:4px;border-radius:999px;background:linear-gradient(to right,var(--turquesa),var(--sol));background:linear-gradient(to right in oklch,var(--turquesa),var(--sol));transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.topo nav a[aria-current="true"]::after{transform:scaleX(1)}
+.topo .btn{min-height:44px;padding:0 20px;font-size:15px}
+.topo.solido{background:var(--marinho);box-shadow:0 1px 0 rgb(255 255 255 / .06),0 12px 30px -14px rgb(7 29 64 / .6)}
+.menu-botao{display:none;width:44px;height:44px;flex:0 0 auto;border:0;border-radius:999px;background:transparent;color:var(--branco);place-items:center;cursor:pointer;transition:background-color .2s ease}
+.menu-botao:hover{background:rgb(255 255 255 / .12)}
+.menu-botao .icone{width:26px;height:26px;--traco:2.4}
+@media (max-width:900px){.topo nav{display:none}.topo .btn{margin-left:auto}.topo .marca{width:156px}.topo .container{gap:8px}.menu-botao{display:grid}}
+/* Menu do celular: gaveta pela direita com fundo escurecido e desfocado */
+dialog.gaveta{margin:0 0 0 auto;height:100dvh;max-height:100dvh;width:min(86vw,384px);border-radius:32px 0 0 32px;background:var(--branco);padding:0}
+dialog.gaveta::backdrop{background:rgb(0 0 0 / .6);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+dialog.gaveta[open]{animation:gaveta-entra .38s cubic-bezier(.2,.8,.2,1)}
+@keyframes gaveta-entra{from{transform:translateX(100%)}to{transform:none}}
+.gaveta-corpo{display:flex;flex-direction:column;height:100%;box-sizing:border-box;padding:22px 26px calc(26px + env(safe-area-inset-bottom))}
+.gaveta-topo{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.gaveta-topo img{width:160px;height:auto}
+.gaveta nav{display:flex;flex-direction:column}
+.gaveta nav a{display:flex;align-items:center;justify-content:space-between;min-height:58px;font-size:24px;font-weight:800;letter-spacing:-0.025em;color:var(--marinho);text-decoration:none;border-bottom:1px solid var(--linha)}
+.gaveta nav a:hover,.gaveta nav a[aria-current="true"]{color:var(--azul)}
+.gaveta nav .icone{--traco:2.6;color:var(--azul)}
+.gaveta-rodape{margin-top:auto;display:grid;gap:14px;padding-top:24px}
+.gaveta-rodape p{font-size:14px;color:var(--suave)}
+.gaveta .btn{width:100%}
+
+/* Passeio em scrollytelling: a foto fica fixa enquanto o texto do capítulo rola; a próxima entra com uma cortina presa ao scroll */
+.historia{position:relative;background:var(--marinho)}
+.palco{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden;z-index:0;background:var(--marinho)}
+.cenas{position:absolute;inset:0}
+.cena{position:absolute;inset:0;margin:0;overflow:hidden;opacity:0;transition:opacity .9s ease}
+.cena.ativa{opacity:1}
+.cena picture,.cena img{display:block;width:100%;height:100%}
+.cena img{object-fit:cover;object-position:50% 50%;transform-origin:50% 60%}
+.com-gsap .cena{opacity:1;transition:none;will-change:clip-path}
+.com-gsap .cena img{will-change:transform}
+.vinheta{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;mix-blend-mode:multiply;background:radial-gradient(ellipse 80% 70% at 50% 45%,rgba(11,42,91,.1),rgba(11,42,91,.75))}
+.com-gsap .zap{opacity:0;pointer-events:none;transform:scale(.8)}
+.com-gsap.ver-zap .zap{opacity:1;pointer-events:auto;transform:none}
+.palco::before,.palco::after{content:"";position:absolute;left:0;right:0;pointer-events:none;z-index:1;mix-blend-mode:multiply}
+.palco::before{top:0;height:34%;background:linear-gradient(180deg,rgba(11,42,91,.72),rgba(11,42,91,0))}
+.palco::after{bottom:0;height:62%;background:linear-gradient(0deg,rgba(11,42,91,.92) 0%,rgba(11,42,91,.55) 50%,rgba(11,42,91,0) 100%)}
+/* os capítulos rolam por cima do palco fixo */
+.passos{position:relative;z-index:2;margin-top:-100vh;margin-top:-100dvh}
+.passo{min-height:100vh;min-height:100dvh;display:flex;align-items:flex-end;box-sizing:border-box;padding:calc(var(--topo) + 24px) 0 clamp(88px,12vh,128px)}
+.cartao{width:min(640px,100% - 32px);margin-left:max(16px,calc((100vw - 1120px)/2));color:var(--branco)}
+.rotulo{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sol);margin-bottom:12px}
+.passo h2{font-size:clamp(32px,5vw,56px);text-shadow:0 2px 24px rgba(11,42,91,.35)}
+.passo-inicio h1{font-size:clamp(38px,6vw,72px);text-shadow:0 2px 24px rgba(11,42,91,.35)}
+.passo p{margin-top:14px;font-size:clamp(16px,1.5vw,19px);font-weight:500;color:#E6EEF9;max-width:520px}
+.passo .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.selo-mini{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgb(11 42 91 / .5);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);font-size:13px;font-weight:600;margin-bottom:18px}
+.passo-fim .cartao img{width:104px;height:104px;margin:0 0 22px}
+.dica-rolar{display:flex;align-items:center;gap:8px;margin-top:22px;font-size:14px;font-weight:500;color:#CFDCF0}
+.dica-rolar .icone{animation:quica 1.8s ease-in-out infinite}
+/* celular: cartão de vidro escuro sobre a foto, legível em qualquer cena */
+@media (max-width:999px){
+  .passo:not(.passo-inicio) .cartao{background:rgb(11 42 91 / .5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgb(255 255 255 / .12);border-radius:24px;padding:22px 22px 24px;box-sizing:border-box}
+}
+/* computador: texto à esquerda sobre o marinho, foto inteira à direita (a foto vertical quase não é cortada) */
+@media (min-width:1000px){
+  .cenas{left:44%}
+  .cenas::after{content:"";position:absolute;top:0;bottom:0;left:0;width:26%;z-index:2;pointer-events:none;background:linear-gradient(to right,var(--marinho),rgb(11 42 91 / 0))}
+  .palco::after{display:none}
+  .passo{align-items:center;padding:calc(var(--topo) + 24px) 0 48px}
+  .cartao{width:min(36vw,520px);margin-left:max(40px,calc((100vw - 1120px)/2))}
+  .passo h2{font-size:clamp(34px,3.6vw,54px)}
+  .passo-inicio h1{font-size:clamp(40px,4.6vw,68px)}
+}
+@media (prefers-reduced-motion:reduce){.cena{transition:none}.dica-rolar .icone{animation:none}}
+/* 5. traço dos ícones acompanha o peso do texto ao lado (traço desenhado ≈ haste da letra) */
+.btn .icone{--traco:2.6}
+.duvidas summary .icone,.programa .marca-programa .icone{--traco:2.5}
+.aviso-status .icone,.pular .icone,.dica-rolar .icone{--traco:1.8}
+.contatos .icone{--traco:1.7}
+.fechar .icone,.zap .icone{--traco:2.3}
+@keyframes quica{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+.trilha{position:absolute;z-index:3;right:max(20px,calc((100vw - 1180px)/2));top:50%;transform:translateY(-50%);display:flex;gap:14px;align-items:stretch}
+.trilha-linha{position:relative;width:3px;border-radius:3px;background:rgba(255,255,255,.28)}
+.trilha-progresso{position:absolute;inset:0;border-radius:3px;background:linear-gradient(to bottom,var(--sol),var(--laranja));background:linear-gradient(to bottom in oklch,var(--sol),var(--laranja));transform-origin:top;transform:scaleY(0)}
+.trilha ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.trilha button{display:flex;align-items:center;gap:10px;min-height:32px;padding:0 10px;border:0;border-radius:999px;background:transparent;color:rgba(255,255,255,.78);font:600 13px/1 var(--f-corpo);cursor:pointer;text-align:left;text-shadow:0 1px 8px rgb(11 42 91 / .6)}
+.trilha button::before{content:"";width:9px;height:9px;border-radius:50%;border:2px solid currentColor;flex:0 0 auto}
+.trilha button:hover{color:var(--branco);background:rgba(255,255,255,.12)}
+.trilha button[aria-current="step"]{color:var(--branco);font-weight:800}
+.trilha button[aria-current="step"]::before{background:var(--sol);border-color:var(--sol)}
+@media (min-width:901px){.trilha{padding:12px 8px 12px 14px;border-radius:20px;background:rgb(11 42 91 / .38);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgb(255 255 255 / .12)}}
+@media (max-width:900px){.trilha{right:10px;top:calc(var(--topo) + 12px);transform:none}.trilha button span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.trilha button{padding:0 6px;min-height:28px;min-width:28px}.trilha ol{gap:2px}}
+
+.pular{position:absolute;z-index:3;right:24px;bottom:28px;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.5);background:rgba(11,42,91,.35);color:var(--branco);font:600 14px/1 var(--f-corpo);text-decoration:none;transition:opacity .3s ease}
+.pular:hover{background:rgba(11,42,91,.6);color:var(--branco)}
+.no-fim .pular,.saindo .pular{opacity:0;pointer-events:none}
+@media (max-width:999px){.pular{display:none}}
+
+/* Seções */
+section.bloco{padding:clamp(64px,9vw,112px) 0}
+.titulo-secao{max-width:720px;margin-bottom:40px}
+.titulo-secao h2{font-size:clamp(30px,4.2vw,48px);font-weight:800}
+.titulo-secao p{margin-top:14px;color:var(--suave);font-size:18px;max-width:62ch}
+.aviso-status{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:10px 16px;border-radius:12px;background:var(--claro-sol);color:var(--marinho);font-size:15px;font-weight:500}
+
+.programas{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1000px){.programas{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.programas{grid-template-columns:1fr}}
+.programa{display:flex;flex-direction:column;gap:12px;padding:26px;border-radius:var(--raio);background:var(--branco);border:1px solid var(--linha)}
+.programa .marca-programa{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;color:var(--marinho)}
+.programa .marca-programa .icone{width:28px;height:28px}
+.programa h3{font-size:22px;font-weight:800}
+.programa p{color:var(--suave);font-size:16px}
+.programa .precos{font-size:15px;color:var(--marinho);font-weight:500;line-height:1.5}
+.programa .precos small{display:block;color:var(--suave);font-weight:400;font-size:13px;margin-top:2px}
+.programa .btn{margin-top:auto;width:100%}
+.programas .programa{transition:transform .25s ease,box-shadow .25s ease}
+.programas .programa:hover{transform:translateY(-4px);box-shadow:0 20px 40px -20px rgb(11 42 91 / .4)}
+.programa-destaque{background:linear-gradient(160deg,var(--marinho),var(--azul-profundo));background:linear-gradient(160deg in oklch,var(--marinho),var(--azul-profundo));border-color:var(--marinho);color:var(--branco)}
+.programa-destaque p,.programa-destaque .precos,.programa-destaque .precos small{color:#DCE6F5}
+
+.estrutura{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
+.estrutura figure::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgb(11 42 91 / 0.1);pointer-events:none}
+.estrutura figure{margin:0;position:relative;border-radius:var(--raio);overflow:hidden;background:var(--marinho);grid-column:span 2;aspect-ratio:3/4}
+.estrutura figure:nth-child(1),.estrutura figure:nth-child(2){grid-column:span 3;aspect-ratio:4/3}
+.estrutura img{width:100%;height:100%;object-fit:cover}
+.estrutura figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 20px 18px;background:linear-gradient(0deg,rgba(11,42,91,.9),rgba(11,42,91,0));color:var(--branco)}
+.estrutura figcaption strong{display:block;font-size:20px}
+.estrutura figcaption span{font-size:15px;color:#DCE6F5}
+@media (max-width:800px){.estrutura{grid-template-columns:1fr 1fr}.estrutura figure,.estrutura figure:nth-child(1),.estrutura figure:nth-child(2){grid-column:span 1;aspect-ratio:3/4}.estrutura figure:nth-child(1){grid-column:span 2;aspect-ratio:4/3}}
+
+.valores{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start}
+@media (max-width:860px){.valores{grid-template-columns:1fr}}
+.tabela{width:100%;border-collapse:collapse;background:var(--branco);border-radius:var(--raio);overflow:hidden;border:1px solid var(--linha)}
+.tabela th,.tabela td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--linha);font-size:16px}
+.tabela tr:last-child td{border-bottom:0}
+.tabela th{background:var(--claro-areia);font-size:13px;letter-spacing:1.2px;text-transform:uppercase;color:var(--suave)}
+.tabela td:last-child{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.nota{margin-top:12px;font-size:14px;color:var(--suave)}
+
+.duvidas{display:grid;gap:12px;max-width:820px}
+.duvidas details{background:var(--branco);border:1px solid var(--linha);border-radius:14px;padding:0 20px}
+.duvidas summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;font-weight:700;font-size:17px}
+.duvidas summary::-webkit-details-marker{display:none}
+.duvidas summary .icone{transition:transform .2s ease}
+.duvidas details[open] summary .icone{transform:rotate(180deg)}
+.duvidas details p{padding:0 0 20px;color:var(--suave)}
+
+.chegar{background:var(--marinho);color:var(--branco)}
+.chegar .titulo-secao p{color:#DCE6F5}
+.chegar-grade{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+@media (max-width:860px){.chegar-grade{grid-template-columns:1fr}}
+.chegar-grade img{border-radius:var(--raio);aspect-ratio:4/3;object-fit:cover;width:100%}
+.contatos{list-style:none;margin:28px 0 32px;padding:20px 22px;display:grid;gap:16px;background:var(--marinho-elevado);border:1px solid rgb(255 255 255 / 0.08);border-radius:var(--raio)}
+.contatos li{display:flex;gap:14px;align-items:flex-start;font-size:17px}
+.contatos .icone{color:var(--sol);margin-top:3px}
+.contatos a{color:var(--branco)}
+.contatos a:hover{color:var(--sol)}
+.chegar .acoes{display:flex;flex-wrap:wrap;gap:12px}
+
+.rodape{background:#071D40;color:#C9D6EA;padding:48px 0 calc(48px + env(safe-area-inset-bottom));font-size:15px}
+.rodape .container{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between}
+.rodape img{width:210px;height:auto}
+.rodape nav{display:flex;flex-wrap:wrap;gap:8px 20px}
+.rodape a,.rodape button.link{color:#C9D6EA;background:none;border:0;padding:0;font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.rodape a:hover,.rodape button.link:hover{color:var(--branco)}
+
+/* WhatsApp flutuante */
+.zap{position:fixed;z-index:25;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:#1DA851;color:var(--branco);box-shadow:0 12px 28px -8px rgb(29 168 81 / .55);text-decoration:none;transition:bottom .25s ease,transform .15s ease}
+.zap:hover{transform:scale(1.06);color:var(--branco);box-shadow:0 16px 34px -8px rgb(29 168 81 / .65)}
+.zap .icone{width:28px;height:28px}
+.com-aviso .zap{bottom:calc(150px + env(safe-area-inset-bottom))}
+.no-passeio .zap{opacity:0;pointer-events:none;transform:scale(.8)}
+@media (min-width:760px){.com-aviso .zap{bottom:110px}}
+
+/* Diálogos */
+dialog{border:0;padding:0;border-radius:22px;width:min(560px,100% - 24px);max-height:calc(100dvh - 24px);color:var(--marinho);background:var(--areia);box-shadow:0 24px 60px rgba(11,42,91,.35)}
+dialog::backdrop{background:rgba(7,29,64,.6)}
+.dlg{display:flex;flex-direction:column;gap:18px;padding:28px}
+.dlg-cabeca{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.dlg-cabeca h2{font-size:26px}
+.dlg-cabeca p{margin-top:6px;color:var(--suave);font-size:15px}
+.fechar{width:44px;height:44px;flex:0 0 auto;border:0;border-radius:12px;background:rgba(11,42,91,.07);color:var(--marinho);display:grid;place-items:center;cursor:pointer}
+.fechar:hover{background:rgba(11,42,91,.14)}
+.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo.inteiro{grid-column:1/-1}
+.campo label{font-size:14px;font-weight:700}
+.campo input,.campo select{min-height:48px;padding:0 14px;border-radius:12px;border:1.5px solid var(--linha-campo);background:var(--branco);color:var(--marinho);font:500 16px var(--f-corpo)}
+.campo input:focus,.campo select:focus{border-color:var(--azul);outline:none;box-shadow:0 0 0 3px rgba(14,107,216,.2)}
+.marcar{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500;min-height:44px}
+.marcar input{width:22px;height:22px;accent-color:var(--azul)}
+.previa{background:var(--branco);border:1px dashed var(--linha-campo);border-radius:14px;padding:14px 16px;font-size:14px;color:var(--suave);white-space:pre-line;max-height:180px;overflow:auto}
+.previa strong{display:block;color:var(--marinho);font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;white-space:normal}
+.estimativa{font-size:15px;font-weight:500}
+.estimativa b{font-variant-numeric:tabular-nums;display:inline-block}
+/* 6. pontas com máscara: a prévia some suavemente embaixo quando ainda há texto para rolar */
+.previa.corta{-webkit-mask-image:linear-gradient(to bottom,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(to bottom,#000 calc(100% - 36px),transparent)}
+/* 7. troca com desfoque: o valor estimado muda com um leve desfoque */
+@keyframes troca{from{filter:blur(4px);opacity:.35}to{filter:blur(0);opacity:1}}
+.estimativa b.troca{animation:troca .35s ease-out}
+.dlg .btn{width:100%}
+.letra-miuda{font-size:13px;color:var(--suave)}
+.politica{max-width:680px}
+.politica .dlg{gap:14px}
+.politica h3{font-size:17px;margin-top:6px}
+.politica p,.politica li{font-size:15px;color:var(--suave)}
+.politica ul{margin:0;padding-left:20px}
+.preencher{background:var(--claro-sol);color:var(--marinho);padding:0 4px;border-radius:4px;font-weight:500}
+
+/* Aviso de cookies */
+.aviso{position:fixed;z-index:40;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));max-width:980px;margin-inline:auto;display:none;gap:16px 24px;align-items:center;flex-wrap:wrap;padding:18px 20px;border-radius:18px;background:var(--branco);color:var(--marinho);box-shadow:0 12px 40px rgba(11,42,91,.28);font-size:15px}
+.com-aviso .aviso{display:flex}
+.aviso p{flex:1 1 360px}
+.aviso .botoes{display:flex;flex-wrap:wrap;gap:10px}
+.aviso .btn{min-height:44px;padding:0 18px;font-size:15px}
+/* 1. raio concêntrico: botões encostados na borda do aviso usam raio externo menos a folga */
+.aviso{--r:24px;--folga:12px;border-radius:var(--r);padding:var(--folga)}
+.aviso p{padding:6px 8px}
+.aviso .btn{border-radius:calc(var(--r) - var(--folga))}
+@media (max-width:600px){.aviso{--folga:10px;gap:8px;font-size:13.5px;line-height:1.45}.aviso p{flex-basis:100%}.aviso .botoes{width:100%;flex-wrap:nowrap;gap:8px}.aviso .btn{flex:1 1 0;padding:0 8px;font-size:14px}.com-aviso .zap{bottom:calc(150px + env(safe-area-inset-bottom))}}
+
+/* ===== Liquid glass: botões e barras de navegação =====
+   Camadas: tinta translúcida + desfoque do que está atrás (backdrop-filter), borda de luz (::before),
+   brilho interno que segue o ponteiro (::after) e, no Chrome de computador, refração nas bordas (filtro SVG por elemento). */
+@property --lq-luz{syntax:"<number>";inherits:false;initial-value:0}
+:root{--mola:cubic-bezier(.3,1.35,.45,1);--mola-suave:cubic-bezier(.25,1.2,.4,1)}
+
+.btn,.pilula,.menu-botao,.fechar,.zap,.pular,.trilha,.topo .container,.aviso{
+  --lq-tinta:rgb(255 255 255 / .12);--lq-blur:10px;--lq-sat:175%;
+  --lq-rim1:.8;--lq-rim2:.3;--lq-topo:.2;--lq-fundo:.16;
+  --lq-sombra:0 10px 26px -12px rgb(4 18 40 / .5);
+  isolation:isolate;background:var(--lq-tinta);
+  -webkit-backdrop-filter:blur(var(--lq-blur)) saturate(var(--lq-sat));
+  backdrop-filter:var(--lq,) blur(var(--lq-blur)) saturate(var(--lq-sat));
+  box-shadow:inset 0 1px 1px rgb(255 255 255 / .28),inset 0 -1px 1px rgb(4 18 40 / .08),var(--lq-sombra);
+  transition:transform .55s var(--mola),background-color .25s ease,color .2s ease,box-shadow .3s ease,--lq-luz .3s ease,bottom .25s ease,opacity .3s ease
+}
+.btn,.pilula,.menu-botao,.fechar,.topo .container{position:relative}
+/* borda de luz: forte no canto de cima, quase some no meio e volta embaixo */
+.btn::before,.pilula::before,.menu-botao::before,.fechar::before,.zap::before,.pular::before,.trilha::before,.topo .container::before,.aviso::before{
+  content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;padding:1.2px;pointer-events:none;
+  background:linear-gradient(155deg,rgb(255 255 255 / var(--lq-rim1)),rgb(255 255 255 / .1) 28%,rgb(255 255 255 / 0) 55%,rgb(255 255 255 / var(--lq-rim2)));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)
+}
+/* brilho interno: luz no topo, reflexo embaixo e um ponto de luz que acompanha o mouse */
+.btn::after,.pilula::after,.menu-botao::after,.fechar::after,.zap::after,.pular::after,.trilha::after,.topo .container::after,.aviso::after{
+  content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;
+  background:
+    radial-gradient(140px 140px at var(--mx,50%) var(--my,0%),rgb(255 255 255 / calc(var(--lq-luz) * .38)),rgb(255 255 255 / 0) 70%),
+    linear-gradient(to bottom,rgb(255 255 255 / var(--lq-topo)),rgb(255 255 255 / 0) 50%),
+    radial-gradient(70% 55% at 50% 118%,rgb(255 255 255 / var(--lq-fundo)),rgb(255 255 255 / 0) 70%)
+}
+.btn:hover,.pilula:hover,.menu-botao:hover,.fechar:hover,.zap:hover,.pular:hover{--lq-luz:1}
+/* toque: o vidro aperta e volta com mola */
+.btn:hover{transform:translateY(-1px) scale(1.025)}
+.btn:active,.pilula:active,.menu-botao:active,.fechar:active,.pular:active{transform:scale(.95);transition-duration:.12s}
+.zap:active{transform:scale(.92);transition-duration:.12s}
+
+/* variantes de tinta */
+.btn{border-radius:999px;border:0}
+.btn-vidro,.btn-contorno-claro{--lq-tinta:rgb(255 255 255 / .12);color:var(--branco);border:0;text-shadow:0 1px 10px rgb(4 18 40 / .35)}
+.btn-vidro:hover,.btn-contorno-claro:hover{--lq-tinta:rgb(255 255 255 / .22);background:var(--lq-tinta);color:var(--branco)}
+.btn-sol{--lq-tinta:linear-gradient(180deg,rgb(255 214 96 / .94),rgb(255 190 26 / .9));--lq-rim1:.95;--lq-rim2:.55;--lq-topo:.35;--lq-fundo:.3;
+  --lq-sombra:0 12px 26px -10px rgb(255 122 47 / .55);color:var(--marinho)}
+.btn-sol:hover{--lq-tinta:linear-gradient(180deg,rgb(255 222 120 / .97),rgb(255 199 52 / .94));background:var(--lq-tinta);color:var(--marinho)}
+.btn-marinho{--lq-tinta:rgb(11 42 91 / .86);--lq-rim1:.55;--lq-rim2:.22;--lq-topo:.14;--lq-fundo:.12;color:var(--branco)}
+.btn-marinho:hover{--lq-tinta:rgb(22 56 111 / .9);background:var(--lq-tinta);color:var(--branco)}
+.btn-contorno,.pilula,.fechar{--lq-tinta:rgb(255 255 255 / .62);--lq-rim1:1;--lq-rim2:.6;--lq-topo:.5;--lq-fundo:.3;
+  --lq-sombra:0 8px 22px -12px rgb(11 42 91 / .35);color:var(--marinho);border:0;
+  box-shadow:inset 0 0 0 1px rgb(11 42 91 / .14),inset 0 1px 1px rgb(255 255 255 / .9),var(--lq-sombra)}
+.btn-contorno:hover,.pilula:hover,.fechar:hover{--lq-tinta:rgb(255 255 255 / .85);background:var(--lq-tinta);color:var(--marinho)}
+.btn-contorno{box-shadow:inset 0 0 0 1.5px rgb(11 42 91 / .45),inset 0 1px 1px rgb(255 255 255 / .9),var(--lq-sombra)}
+.fechar{border-radius:999px}
+.zap{--lq-tinta:linear-gradient(180deg,rgb(52 199 104 / .92),rgb(29 168 81 / .9));--lq-rim1:.9;--lq-rim2:.45;--lq-topo:.32;
+  --lq-sombra:0 12px 28px -8px rgb(29 168 81 / .55)}
+.zap:hover{transform:scale(1.07)}
+.menu-botao{--lq-tinta:rgb(255 255 255 / .12);--lq-sombra:none;color:var(--branco)}
+.menu-botao:hover{--lq-tinta:rgb(255 255 255 / .22);background:var(--lq-tinta)}
+.pular{--lq-tinta:rgb(11 42 91 / .28);border:0}
+.pular:hover{--lq-tinta:rgb(11 42 91 / .45);background:var(--lq-tinta)}
+
+/* topo: barra de vidro flutuante; mais tinta sobre as seções claras para manter o contraste */
+:root{--topo:84px}
+.topo{top:10px;height:auto;background:none!important;box-shadow:none!important}
+.topo .container{width:min(1180px,100% - 20px);height:64px;padding:0 8px 0 20px;border-radius:999px;
+  --lq-tinta:rgb(11 42 91 / .3);--lq-blur:18px;--lq-sat:185%;--lq-rim1:.7;--lq-rim2:.25;--lq-topo:.14;--lq-fundo:.1;
+  --lq-sombra:0 14px 34px -16px rgb(4 18 40 / .6);transition:background-color .4s ease,box-shadow .4s ease}
+.topo.solido .container{--lq-tinta:rgb(11 42 91 / .84);--lq-rim1:.55;background:var(--lq-tinta)}
+.topo .marca{width:154px}
+.topo .btn{min-height:46px}
+.topo nav{position:relative;gap:4px;align-items:center}
+.topo nav a{z-index:1;padding:10px 14px;border-radius:999px;color:rgb(255 255 255 / .8)}
+.topo nav a::after{display:none}
+@media (max-width:900px){.topo .container{padding:0 7px 0 16px}.topo .marca{width:132px}.topo .btn{min-height:44px;padding:0 18px}}
+
+/* lente líquida: a cápsula que marca a seção e o capítulo, desliza e estica até o próximo item */
+.lente{position:absolute;z-index:0;left:0;right:100%;top:0;bottom:100%;border-radius:999px;pointer-events:none;opacity:0;transform:scale(.6);
+  background:rgb(255 255 255 / .17);
+  box-shadow:inset 0 1px 0 rgb(255 255 255 / .6),inset 0 0 0 1px rgb(255 255 255 / .2),inset 0 -6px 12px -8px rgb(255 255 255 / .4),0 6px 16px -8px rgb(4 18 40 / .55);
+  transition-property:left,right,top,bottom,opacity,transform;transition-timing-function:var(--mola),var(--mola),var(--mola),var(--mola),ease,var(--mola);
+  transition-duration:.5s,.5s,.5s,.5s,.25s,.45s}
+.lente.visivel{opacity:1;transform:none}
+.lente.vai{transition-duration:.6s,.36s,.6s,.36s,.25s,.45s}
+.lente.volta{transition-duration:.36s,.6s,.36s,.6s,.25s,.45s}
+.lente.parada{transition:none}
+.topo nav .lente{top:50%;bottom:auto;height:40px;margin-top:-20px}
+
+/* trilha dos capítulos: vidro escuro com a lente no capítulo atual */
+.trilha{--lq-tinta:rgb(11 42 91 / .3);--lq-blur:14px;--lq-rim1:.6;--lq-rim2:.22;--lq-topo:.12;--lq-fundo:.08;border:0!important;
+  background:var(--lq-tinta)!important}
+.trilha ol{position:relative;z-index:1}
+.trilha button:hover{background:none}
+.trilha .lente{background:rgb(255 255 255 / .2)}
+@media (max-width:900px){.trilha{padding:8px 6px;border-radius:999px;gap:8px}}
+
+/* menu do celular: painel de vidro claro sobre o site */
+dialog.gaveta{background:rgb(255 255 255 / .74);-webkit-backdrop-filter:blur(26px) saturate(180%);backdrop-filter:blur(26px) saturate(180%);
+  box-shadow:inset 1px 0 0 rgb(255 255 255 / .9),-20px 0 50px -20px rgb(4 18 40 / .45)}
+dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:none;backdrop-filter:none}
+.gaveta nav a{border-bottom-color:rgb(11 42 91 / .1)}
+
+/* aviso de cookies: barra de vidro claro, botões continuam com o mesmo peso */
+.aviso{--lq-tinta:rgb(255 255 255 / .74);--lq-blur:22px;--lq-rim1:1;--lq-rim2:.55;--lq-topo:.4;--lq-fundo:.2;--lq-sombra:0 18px 40px -16px rgb(4 18 40 / .45);
+  --r:34px;background:var(--lq-tinta)}
+@media (max-width:600px){.aviso{--r:32px}}
+
+/* sem transparência (preferência do sistema) ou navegador sem desfoque: superfícies sólidas */
+@media (prefers-reduced-transparency:reduce){
+  .btn,.pilula,.menu-botao,.fechar,.zap,.pular,.trilha,.topo .container,.aviso,dialog.gaveta{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  .topo .container,.trilha,.pular,.btn-vidro,.btn-contorno-claro{background:var(--marinho)!important}
+  .aviso,dialog.gaveta{background:var(--branco)}
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .topo .container,.trilha{background:rgb(11 42 91 / .9)!important}
+  .btn-vidro,.btn-contorno-claro{background:rgb(11 42 91 / .7)}
+}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-conversa" viewBox="0 0 24 24"><path d="M4 20l1.6-4.2A8 8 0 1 1 8.4 18.6L4 20z"/><path d="M9 10.5h6M9 13.5h4"/></symbol>
+  <symbol id="i-baixo" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="i-fechar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17 7.2h.01"/></symbol>
+  <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
+  <symbol id="i-chale" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></symbol>
+  <symbol id="i-festa" viewBox="0 0 24 24"><path d="M12 3c3.3 0 5.5 2.6 5.5 5.8 0 3.6-2.8 6.7-5.5 6.7S6.5 12.4 6.5 8.8C6.5 5.6 8.7 3 12 3z"/><path d="M11 15.4l-.8 1.6h3.6l-.8-1.6"/><path d="M12 17c0 2-1.5 2.5-1.5 4"/></symbol>
+  <symbol id="i-grupo" viewBox="0 0 24 24"><circle cx="8.5" cy="8.5" r="3"/><circle cx="16.5" cy="9.5" r="2.5"/><path d="M3 19.5c.6-3.3 2.8-5 5.5-5s4.9 1.7 5.5 5"/><path d="M14.5 14.6c.6-.2 1.3-.3 2-.3 2.3 0 4 1.4 4.5 4.2"/></symbol>
+</svg>
+
+<svg id="lq-filtros" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false"><defs></defs></svg>
+<header class="topo" id="topo">
+  <div class="container">
+    <a class="marca" href="#passeio" aria-label="Estância das Águas, voltar ao início">
+      <img src="img/logo-negativo.svg" alt="Estância das Águas" width="196" height="64">
+    </a>
+    <nav aria-label="Seções">
+      <a href="#programas">Programas</a>
+      <a href="#estrutura">O que tem</a>
+      <a href="#valores">Valores</a>
+      <a href="#como-chegar">Como chegar</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <button class="btn btn-sol" type="button" data-abrir="dayuse">Reservar</button>
+    <button class="menu-botao" type="button" data-abrir="menu" aria-label="Abrir menu" aria-controls="dlg-menu" aria-expanded="false"><svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <section class="historia" id="passeio" aria-label="Passeio pela Estância das Águas">
+    <div class="palco" id="palco">
+      <div class="cenas">
+        <figure class="cena ativa"><img src="fotos/mobile/frame_0059.webp" srcset="fotos/mobile/frame_0059.webp 900w, fotos/desktop/frame_0059.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="Piscina com o brinquedão aquático e os tobogãs, cercada de coqueiros" decoding="async" fetchpriority="high"></figure>
+        <figure class="cena"><img src="fotos/mobile/frame_0004.webp" srcset="fotos/mobile/frame_0004.webp 900w, fotos/desktop/frame_0004.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="Deck azul que leva às piscinas, com o brinquedão ao fundo" decoding="async" fetchpriority="low"></figure>
+        <figure class="cena"><img src="fotos/mobile/frame_0011.webp" srcset="fotos/mobile/frame_0011.webp 900w, fotos/desktop/frame_0011.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="Tobogã azul com escada amarela" decoding="async" fetchpriority="low"></figure>
+        <figure class="cena"><img src="fotos/mobile/frame_0017.webp" srcset="fotos/mobile/frame_0017.webp 900w, fotos/desktop/frame_0017.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="Piscina com o brinquedão aquático colorido e os escorregadores" decoding="async" fetchpriority="low"></figure>
+        <figure class="cena"><img src="fotos/mobile/frame_0028.webp" srcset="fotos/mobile/frame_0028.webp 900w, fotos/desktop/frame_0028.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="Mesas e cadeiras na sombra das árvores, ao lado da piscina" decoding="async" fetchpriority="low"></figure>
+        <figure class="cena"><img src="fotos/mobile/frame_0039.webp" srcset="fotos/mobile/frame_0039.webp 900w, fotos/desktop/frame_0039.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="Chalé branco com telhado de barro entre coqueiros" decoding="async" fetchpriority="low"></figure>
+        <figure class="cena"><img src="fotos/mobile/frame_0067.webp" srcset="fotos/mobile/frame_0067.webp 900w, fotos/desktop/frame_0067.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="Céu aberto sobre a piscina e os tobogãs" decoding="async" fetchpriority="low"></figure>
+        <figure class="cena"><img src="fotos/mobile/frame_0080.webp" srcset="fotos/mobile/frame_0080.webp 900w, fotos/desktop/frame_0080.webp 1440w" sizes="(min-width: 1000px) 56vw, (min-aspect-ratio: 3/4) 100vw, 75vh" width="1440" height="1920" alt="O sol entre as folhas de coqueiro" decoding="async" fetchpriority="low"></figure>
+        <div class="vinheta" aria-hidden="true"></div>
+      </div>
+
+      <nav class="trilha" aria-label="Capítulos do passeio">
+        <div class="trilha-linha" aria-hidden="true"><div class="trilha-progresso"></div></div>
+        <ol>
+          <li><button type="button"><span>Início</span></button></li>
+          <li><button type="button"><span>Chegada</span></button></li>
+          <li><button type="button"><span>Tobogã</span></button></li>
+          <li><button type="button"><span>Piscina infantil</span></button></li>
+          <li><button type="button"><span>Sombra</span></button></li>
+          <li><button type="button"><span>Chalés</span></button></li>
+          <li><button type="button"><span>Programas</span></button></li>
+          <li><button type="button"><span>Reserva</span></button></li>
+        </ol>
+      </nav>
+      <a class="pular" href="#programas">Pular passeio<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></a>
+    </div>
+
+    <div class="passos">
+      <article class="passo passo-inicio">
+        <div class="cartao">
+          <span class="selo-mini">Day use · Hospedagem · Eventos · Retiros</span>
+          <h1>Seu dia de parque aquático em Ilhéus</h1>
+          <p>Piscinas, tobogã e sombra de coqueiro na Praia do Sul, km 11.</p>
+          <div class="acoes">
+            <button class="btn btn-sol" type="button" data-abrir="dayuse"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Reservar day use</button>
+            <a class="btn btn-vidro" href="#programas">Ver programas<svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a>
+          </div>
+          <div class="dica-rolar"><svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg>Role para fazer o passeio</div>
+        </div>
+      </article>
+      <article class="passo">
+        <div class="cartao">
+          <span class="rotulo">01 · Chegada</span>
+          <h2>Bem-vindo à Estância</h2>
+          <p>Deck azul, coqueiros e o barulho da água. O passeio começa aqui.</p>
+        </div>
+      </article>
+      <article class="passo">
+        <div class="cartao">
+          <span class="rotulo">02 · Tobogã</span>
+          <h2>A descida mais esperada do dia</h2>
+          <p>Sobe a escada amarela e desce de novo. E de novo.</p>
+        </div>
+      </article>
+      <article class="passo">
+        <div class="cartao">
+          <span class="rotulo">03 · Piscina infantil</span>
+          <h2>Brinquedão aquático para a criançada</h2>
+          <p>Escorregador colorido para os pequenos, com os pais de olho ali do lado.</p>
+        </div>
+      </article>
+      <article class="passo">
+        <div class="cartao">
+          <span class="rotulo">04 · Sombra</span>
+          <h2>Mesa na sombra, o dia inteiro</h2>
+          <p>Árvores e coqueiros em volta das piscinas para descansar entre um mergulho e outro.</p>
+        </div>
+      </article>
+      <article class="passo">
+        <div class="cartao">
+          <span class="rotulo">05 · Hospedagem</span>
+          <h2>Chalés a poucos passos da água</h2>
+          <p>Fique para dormir e acorde pertinho da piscina.</p>
+        </div>
+      </article>
+      <article class="passo">
+        <div class="cartao">
+          <span class="rotulo">06 · Programas</span>
+          <h2>Day use, hospedagem, eventos e retiros</h2>
+          <p>Um dia em família, um fim de semana ou a sua comemoração.</p>
+          <div class="acoes"><a class="btn btn-vidro" href="#programas">Ver programas<svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a></div>
+        </div>
+      </article>
+      <article class="passo passo-fim">
+        <div class="cartao">
+          <img src="img/simbolo.svg" alt="" width="104" height="104">
+          <h2>O dia aqui é sempre lindo.</h2>
+          <p>Escolha a data e fale com a gente pelo WhatsApp.</p>
+          <div class="acoes">
+            <button class="btn btn-sol" type="button" data-abrir="dayuse"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Reservar pelo WhatsApp</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="bloco" id="programas">
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>Escolha o seu programa</h2>
+        <p>Preencha a data e o número de pessoas. A mensagem sai pronta no seu WhatsApp, é só conferir e enviar.</p>
+        <span class="aviso-status" id="status-dayuse"><svg class="icone" aria-hidden="true"><use href="#i-sol"/></svg><span></span></span>
+      </div>
+      <div class="programas">
+        <article class="programa programa-destaque">
+          <div class="marca-programa" style="background:var(--sol)"><svg class="icone" aria-hidden="true"><use href="#i-sol"/></svg></div>
+          <h3>Day use</h3>
+          <p>Um dia inteiro de piscina, tobogã e sombra.</p>
+          <div class="precos" id="precos-card"></div>
+          <button class="btn btn-sol" type="button" data-abrir="dayuse">Montar pedido</button>
+        </article>
+        <article class="programa">
+          <div class="marca-programa" style="background:var(--claro-turquesa)"><svg class="icone" aria-hidden="true"><use href="#i-chale"/></svg></div>
+          <h3>Hospedagem</h3>
+          <p>Chalés pertinho das piscinas para esticar o passeio.</p>
+          <button class="btn btn-marinho" type="button" data-abrir="hospedagem">Montar pedido</button>
+        </article>
+        <article class="programa">
+          <div class="marca-programa" style="background:var(--claro-laranja)"><svg class="icone" aria-hidden="true"><use href="#i-festa"/></svg></div>
+          <h3>Eventos</h3>
+          <p>Aniversários e comemorações com a piscina como cenário.</p>
+          <button class="btn btn-marinho" type="button" data-abrir="eventos">Montar pedido</button>
+        </article>
+        <article class="programa">
+          <div class="marca-programa" style="background:var(--claro-azul)"><svg class="icone" aria-hidden="true"><use href="#i-grupo"/></svg></div>
+          <h3>Retiros</h3>
+          <p>Espaço para o seu grupo passar o dia ou o fim de semana juntos.</p>
+          <button class="btn btn-marinho" type="button" data-abrir="retiros">Montar pedido</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="estrutura" style="background:var(--branco)">
+    <div class="container">
+      <div class="titulo-secao">
+        <h2>O que você encontra aqui</h2>
+        <p>Fotos do mesmo caminho do passeio, tiradas na Estância.</p>
+      </div>
+      <div class="estrutura">
+        <figure><img src="img/foto-010.webp" alt="Tobogã azul com escada amarela" loading="lazy"><figcaption><strong>Tobogã</strong><span>Para quem não cansa de descer.</span></figcaption></figure>
+        <figure><img src="img/foto-058.webp" alt="Piscina com brinquedão aquático e coqueiros" loading="lazy"><figcaption><strong>Piscinas e coqueiros</strong><span>Água, sol e palmeira para todo lado.</span></figcaption></figure>
+        <figure><img src="img/foto-018.webp" alt="Piscina infantil com escorregador colorido" loading="lazy"><figcaption><strong>Piscina infantil</strong><span>Brinquedão com escorregador.</span></figcaption></figure>
+        <figure><img src="img/foto-027.webp" alt="Mesas com cadeiras brancas na sombra" loading="lazy"><figcaption><strong>Mesas na sombra</strong><span>Para o almoço e o descanso.</span></figcaption></figure>
+        <figure><img src="img/foto-038.webp" alt="Chalés brancos com telhado de barro" loading="lazy"><figcaption><strong>Chalés</strong><span>Hospedagem dentro da Estância.</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco" id="valores">
+    <div class="container valores">
+      <div>
+        <div class="titulo-secao" style="margin-bottom:24px">
+          <h2>Valores do day use</h2>
+          <p>Criança até 4 anos não paga. De 5 a 11 anos paga meia.</p>
+        </div>
+        <table class="tabela" id="tabela-precos">
+          <thead><tr><th scope="col">Quem</th><th scope="col">Valor por pessoa</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p class="nota" id="nota-precos"></p>
+      </div>
+      <div class="programa">
+        <h3>Reserve antes de vir</h3>
+        <p>Nos fins de semana de muita procura o day use e a hospedagem podem lotar. Confirme a sua data pelo WhatsApp.</p>
+        <button class="btn btn-sol" type="button" data-abrir="dayuse"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Consultar minha data</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloco chegar" id="como-chegar">
+    <div class="container chegar-grade">
+      <div>
+        <div class="titulo-secao" style="margin-bottom:0">
+          <h2>Como chegar</h2>
+          <p>Na Praia do Sul, no km 11, em Ilhéus.</p>
+        </div>
+        <ul class="contatos">
+          <li><svg class="icone" aria-hidden="true"><use href="#i-pino"/></svg><span>Praia do Sul, km 11 · Ilhéus · Bahia</span></li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg><span>WhatsApp <a id="zap-texto" href="#" target="_blank" rel="noopener">(73) 99150-0002</a></span></li>
+          <li><svg class="icone" aria-hidden="true"><use href="#i-camera"/></svg><span>Instagram <a id="insta-texto" href="#" target="_blank" rel="noopener">@pousada.estanciadasaguas</a></span></li>
+        </ul>
+        <div class="acoes">
+          <a class="btn btn-sol" id="link-mapa" href="#" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-pino"/></svg>Abrir no mapa</a>
+          <a class="btn btn-contorno-claro" id="link-insta" href="#" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-camera"/></svg>Ver o Instagram</a>
+        </div>
+      </div>
+      <img src="img/foto-058.webp" alt="Vista da piscina com tobogã e coqueiros" loading="lazy">
+    </div>
+  </section>
+
+  <section class="bloco" id="duvidas">
+    <div class="container">
+      <div class="titulo-secao"><h2>Dúvidas frequentes</h2></div>
+      <div class="duvidas">
+        <details><summary>Quais dias tem day use?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Aos sábados, domingos e feriados. Na alta temporada pode abrir todos os dias. Confirme a sua data pelo WhatsApp antes de vir.</p></details>
+        <details><summary>Criança paga?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Até 4 anos não paga. De 5 a 11 anos paga meia. Os valores estão na tabela acima.</p></details>
+        <details><summary>Como faço a reserva?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Pelo WhatsApp. Escolha o programa, preencha a data e o número de pessoas e a mensagem já sai pronta para enviar.</p></details>
+        <details><summary>E se o fim de semana lotar?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Quando lota, a Estância avisa no Instagram e no WhatsApp. Por isso vale reservar antes de sair de casa.</p></details>
+        <details><summary>Vocês fazem eventos e retiros?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Sim. Conte o tipo de evento ou de grupo, a data e quantas pessoas, e a equipe responde com as opções.</p></details>
+      </div>
+      <p class="nota" style="margin-top:24px">Ficou outra dúvida?</p>
+      <a class="pilula" id="zap-duvida" href="#" target="_blank" rel="noopener" style="margin-top:12px">Chame no WhatsApp<svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="container">
+    <img src="img/logo-negativo.svg" alt="Estância das Águas" width="210" height="69" loading="lazy">
+    <div>Praia do Sul, km 11 · Ilhéus · Bahia<br>WhatsApp (73) 99150-0002</div>
+    <nav aria-label="Informações legais">
+      <button class="link" type="button" data-abrir="politica">Política de privacidade</button>
+      <button class="link" type="button" id="reabrir-aviso">Preferências de cookies</button>
+    </nav>
+  </div>
+</footer>
+
+<a class="zap" id="zap-flutuante" href="#" target="_blank" rel="noopener" aria-label="Conversar com a Estância pelo WhatsApp"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg></a>
+
+<!-- Menu do celular -->
+<dialog id="dlg-menu" class="gaveta" aria-label="Menu">
+  <div class="gaveta-corpo">
+    <div class="gaveta-topo">
+      <img src="img/logo.svg" alt="Estância das Águas" width="160" height="55">
+      <button class="fechar" type="button" data-fechar aria-label="Fechar menu"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    </div>
+    <nav aria-label="Seções">
+      <a href="#programas">Programas<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+      <a href="#estrutura">O que tem<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+      <a href="#valores">Valores<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+      <a href="#como-chegar">Como chegar<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+      <a href="#duvidas">Dúvidas<svg class="icone" aria-hidden="true"><use href="#i-seta"/></svg></a>
+    </nav>
+    <div class="gaveta-rodape">
+      <p>Praia do Sul, km 11 · Ilhéus · Bahia</p>
+      <button class="btn btn-marinho btn-caixa" type="button" data-abrir="dayuse">Reservar pelo WhatsApp</button>
+    </div>
+  </div>
+</dialog>
+
+<!-- Pedido: day use -->
+<dialog id="dlg-dayuse" aria-labelledby="t-dayuse">
+  <form class="dlg" method="dialog" data-tipo="dayuse">
+    <div class="dlg-cabeca">
+      <div><h2 id="t-dayuse">Day use</h2><p>Monte o pedido e envie pelo WhatsApp.</p></div>
+      <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    </div>
+    <div class="campos">
+      <div class="campo inteiro"><label for="du-data">Data</label><input type="date" id="du-data" name="data"></div>
+      <div class="campo inteiro"><label for="du-adultos">Adultos (12 anos ou mais)</label><input type="number" id="du-adultos" name="adultos" min="1" max="99" value="2" inputmode="numeric"></div>
+      <div class="campo"><label for="du-criancas">Crianças de 5 a 11</label><input type="number" id="du-criancas" name="criancas" min="0" max="99" value="0" inputmode="numeric"></div>
+      <div class="campo"><label for="du-bebes">Crianças até 4</label><input type="number" id="du-bebes" name="bebes" min="0" max="99" value="0" inputmode="numeric"></div>
+    </div>
+    <p class="estimativa" id="du-estimativa"></p>
+    <div class="previa"><strong>Sua mensagem</strong><span data-previa></span></div>
+    <a class="btn btn-sol" data-enviar href="#" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Abrir no WhatsApp</a>
+    <p class="letra-miuda">Nada é enviado pelo site. O pedido abre no seu WhatsApp e você confere antes de mandar.</p>
+  </form>
+</dialog>
+
+<!-- Pedido: hospedagem -->
+<dialog id="dlg-hospedagem" aria-labelledby="t-hospedagem">
+  <form class="dlg" method="dialog" data-tipo="hospedagem">
+    <div class="dlg-cabeca">
+      <div><h2 id="t-hospedagem">Hospedagem</h2><p>Diga as datas e quantas pessoas.</p></div>
+      <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    </div>
+    <div class="campos">
+      <div class="campo"><label for="ho-entrada">Entrada</label><input type="date" id="ho-entrada" name="entrada"></div>
+      <div class="campo"><label for="ho-saida">Saída</label><input type="date" id="ho-saida" name="saida"></div>
+      <div class="campo"><label for="ho-adultos">Adultos</label><input type="number" id="ho-adultos" name="adultos" min="1" max="99" value="2" inputmode="numeric"></div>
+      <div class="campo"><label for="ho-criancas">Crianças</label><input type="number" id="ho-criancas" name="criancas" min="0" max="99" value="0" inputmode="numeric"></div>
+    </div>
+    <div class="previa"><strong>Sua mensagem</strong><span data-previa></span></div>
+    <a class="btn btn-sol" data-enviar href="#" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Abrir no WhatsApp</a>
+    <p class="letra-miuda">Nada é enviado pelo site. O pedido abre no seu WhatsApp e você confere antes de mandar.</p>
+  </form>
+</dialog>
+
+<!-- Pedido: eventos -->
+<dialog id="dlg-eventos" aria-labelledby="t-eventos">
+  <form class="dlg" method="dialog" data-tipo="eventos">
+    <div class="dlg-cabeca">
+      <div><h2 id="t-eventos">Eventos</h2><p>Conte o que você quer comemorar.</p></div>
+      <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    </div>
+    <div class="campos">
+      <div class="campo inteiro"><label for="ev-tipo">Tipo de evento</label>
+        <select id="ev-tipo" name="tipo"><option>Aniversário</option><option>Confraternização</option><option>Casamento</option><option>Outro</option></select></div>
+      <div class="campo"><label for="ev-data">Data</label><input type="date" id="ev-data" name="data"></div>
+      <div class="campo"><label for="ev-convidados">Convidados</label><input type="number" id="ev-convidados" name="convidados" min="1" max="2000" value="30" inputmode="numeric"></div>
+    </div>
+    <div class="previa"><strong>Sua mensagem</strong><span data-previa></span></div>
+    <a class="btn btn-sol" data-enviar href="#" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Abrir no WhatsApp</a>
+    <p class="letra-miuda">Nada é enviado pelo site. O pedido abre no seu WhatsApp e você confere antes de mandar.</p>
+  </form>
+</dialog>
+
+<!-- Pedido: retiros -->
+<dialog id="dlg-retiros" aria-labelledby="t-retiros">
+  <form class="dlg" method="dialog" data-tipo="retiros">
+    <div class="dlg-cabeca">
+      <div><h2 id="t-retiros">Retiros</h2><p>Conte sobre o seu grupo.</p></div>
+      <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    </div>
+    <div class="campos">
+      <div class="campo inteiro"><label for="re-grupo">Tipo de grupo</label>
+        <select id="re-grupo" name="grupo"><option>Igreja</option><option>Empresa</option><option>Escola</option><option>Família ou amigos</option><option>Outro</option></select></div>
+      <div class="campo"><label for="re-chegada">Chegada</label><input type="date" id="re-chegada" name="chegada"></div>
+      <div class="campo"><label for="re-noites">Noites (0 = só o dia)</label><input type="number" id="re-noites" name="noites" min="0" max="30" value="2" inputmode="numeric"></div>
+      <div class="campo inteiro"><label for="re-pessoas">Pessoas</label><input type="number" id="re-pessoas" name="pessoas" min="1" max="2000" value="40" inputmode="numeric"></div>
+    </div>
+    <div class="previa"><strong>Sua mensagem</strong><span data-previa></span></div>
+    <a class="btn btn-sol" data-enviar href="#" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Abrir no WhatsApp</a>
+    <p class="letra-miuda">Nada é enviado pelo site. O pedido abre no seu WhatsApp e você confere antes de mandar.</p>
+  </form>
+</dialog>
+
+<!-- Política de privacidade -->
+<dialog id="dlg-politica" class="politica" aria-labelledby="t-politica">
+  <div class="dlg">
+    <div class="dlg-cabeca">
+      <div><h2 id="t-politica">Política de privacidade</h2><p>Como este site trata os seus dados, conforme a LGPD (Lei 13.709/2018).</p></div>
+      <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    </div>
+    <h3>Quem é o controlador</h3>
+    <p>Estância das Águas, <span class="preencher">[razão social]</span>, CNPJ <span class="preencher">[CNPJ]</span>, Praia do Sul, km 11, Ilhéus, Bahia. Contato pelo WhatsApp (73) 99150-0002.</p>
+    <h3>Quais dados o site coleta</h3>
+    <p>Nenhum. Os formulários de pedido montam a mensagem no seu próprio aparelho e não enviam nada para servidores da Estância. O site não usa cookies de rastreamento, pixels de anúncio nem ferramentas de medição.</p>
+    <h3>Serviços que entregam a página</h3>
+    <p>Para exibir o site, o navegador baixa as fontes de texto do Google Fonts (Google) e a biblioteca de animação da cdnjs (Cloudflare). Nessas requisições, esses serviços recebem o endereço IP do seu aparelho, como acontece ao abrir qualquer página.</p>
+    <h3>O que fica guardado no seu navegador</h3>
+    <p>Apenas a sua escolha sobre o aviso de cookies, para não perguntar de novo. Você pode mudar essa escolha em "Preferências de cookies", no rodapé.</p>
+    <h3>Quando você fala pelo WhatsApp</h3>
+    <p>Ao tocar em "Abrir no WhatsApp", a conversa passa a acontecer no aplicativo WhatsApp, operado pela Meta, sob os termos dele. Os dados que você enviar na conversa (nome, telefone, datas, número de pessoas) são usados só para responder e organizar a sua reserva, e guardados pelo tempo necessário para isso e para cumprir obrigações legais.</p>
+    <h3>Seus direitos</h3>
+    <ul>
+      <li>Confirmar se tratamos seus dados e ter acesso a eles;</li>
+      <li>corrigir dados incompletos ou desatualizados;</li>
+      <li>pedir anonimização, bloqueio ou eliminação de dados desnecessários;</li>
+      <li>pedir a portabilidade e saber com quem os dados foram compartilhados;</li>
+      <li>revogar o consentimento quando ele for a base do tratamento.</li>
+    </ul>
+    <h3>Encarregado de dados</h3>
+    <p><span class="preencher">[nome e contato do encarregado]</span></p>
+    <p class="letra-miuda">Última atualização: <span class="preencher">[data]</span>.</p>
+  </div>
+</dialog>
+
+<!-- Preferências de cookies -->
+<dialog id="dlg-cookies" aria-labelledby="t-cookies">
+  <form class="dlg" method="dialog">
+    <div class="dlg-cabeca">
+      <div><h2 id="t-cookies">Preferências de cookies</h2><p>Escolha o que o site pode usar.</p></div>
+      <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
+    </div>
+    <label class="marcar"><input type="checkbox" checked disabled> Essenciais: guardar a sua escolha deste aviso. Sempre ativo.</label>
+    <label class="marcar" for="ck-medicao"><input type="checkbox" id="ck-medicao"> Medição de visitas e anúncios. Hoje o site não usa nenhuma ferramenta desse tipo.</label>
+    <button class="btn btn-marinho" type="button" id="salvar-preferencias">Salvar escolha</button>
+  </form>
+</dialog>
+
+<!-- Aviso de cookies -->
+<div class="aviso" id="aviso-cookies" role="region" aria-label="Aviso de cookies">
+  <p>Este site não usa cookies de rastreamento. Guardamos no seu navegador só a sua escolha sobre este aviso. <button class="link" type="button" data-abrir="politica" style="background:none;border:0;padding:0;font:inherit;color:var(--azul);text-decoration:underline;cursor:pointer">Política de privacidade</button></p>
+  <div class="botoes">
+    <button class="btn btn-marinho" type="button" data-cookies="aceitar">Aceitar</button>
+    <button class="btn btn-marinho" type="button" data-cookies="recusar">Recusar</button>
+    <button class="btn btn-contorno" type="button" data-cookies="preferencias">Preferências</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+/* ===== Dados da Estância: edite aqui ===== */
+var CONFIG = {
+  whatsapp: '5573991500002',
+  instagram: 'https://www.instagram.com/pousada.estanciadasaguas/',
+  mapa: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Estância das Águas, Praia do Sul km 11, Ilhéus BA'),
+  status: 'Day use aos sábados, domingos e feriados. Confirme a sua data pelo WhatsApp.',
+  precos: [
+    { quem: 'Adulto (12 anos ou mais)', valor: 30 },
+    { quem: 'Criança de 5 a 11 anos', valor: 15 },
+    { quem: 'Criança até 4 anos', valor: 0 }
+  ],
+  notaPrecos: 'Valores de referência. Confirme o valor da sua data pelo WhatsApp.',
+  /* refração nas bordas do vidro (só Chrome/Edge no computador). Use false para deixar só o desfoque. */
+  refracao: true
+};
+
+(function () {
+  var doc = document.documentElement;
+  doc.classList.remove('sem-js');
+  var reduz = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Utilidades ---------- */
+  function brl(v) { return v === 0 ? 'Grátis' : v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 0 }); }
+  function zap(texto) { return 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(texto); }
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+  /* ---------- Conteúdo vindo do CONFIG ---------- */
+  $('#status-dayuse span').textContent = CONFIG.status;
+  $('#precos-card').innerHTML = CONFIG.precos.map(function (p) { return p.quem.replace(' (12 anos ou mais)', '') + ': <b>' + brl(p.valor) + '</b>'; }).join('<br>') + '<small>Valores de referência</small>';
+  $('#tabela-precos tbody').innerHTML = CONFIG.precos.map(function (p) { return '<tr><td>' + p.quem + '</td><td>' + brl(p.valor) + '</td></tr>'; }).join('');
+  $('#nota-precos').textContent = CONFIG.notaPrecos;
+  var oi = zap('Olá! Vim pelo site da Estância das Águas e quero tirar uma dúvida.');
+  ['#zap-flutuante', '#zap-texto', '#zap-duvida'].forEach(function (s) { $(s).href = oi; });
+  $('#link-mapa').href = CONFIG.mapa;
+  $('#link-insta').href = CONFIG.instagram;
+  $('#insta-texto').href = CONFIG.instagram;
+
+  /* ---------- Liquid glass ----------
+     Lente: cápsula de vidro que desliza até o item ativo; a borda da frente chega primeiro e a de trás
+     vem depois, então ela estica e volta ao tamanho como uma gota. */
+  function criarLente(caixa, vertical) {
+    var el = document.createElement('span');
+    el.className = 'lente'; el.setAttribute('aria-hidden', 'true');
+    caixa.insertBefore(el, caixa.firstChild);
+    var alvo = null, inicio = null;
+    function posicionar(a, animar) {
+      if (!a || !a.offsetWidth) { el.classList.remove('visivel'); alvo = null; inicio = null; return; }
+      var rc = caixa.getBoundingClientRect(), ra = a.getBoundingClientRect();
+      var x = ra.left - rc.left - caixa.clientLeft, y = ra.top - rc.top - caixa.clientTop;
+      var de = vertical ? y : x;
+      if (!animar || inicio === null) {
+        el.classList.add('parada');
+      } else {
+        el.classList.toggle('vai', de > inicio);
+        el.classList.toggle('volta', de < inicio);
+      }
+      el.style.left = x + 'px';
+      el.style.right = (caixa.clientWidth - x - ra.width) + 'px';
+      if (vertical) {
+        el.style.top = y + 'px';
+        el.style.bottom = (caixa.clientHeight - y - ra.height) + 'px';
+      }
+      if (el.classList.contains('parada')) { void el.offsetWidth; el.classList.remove('parada'); }
+      el.classList.add('visivel');
+      alvo = a; inicio = de;
+    }
+    addEventListener('resize', function () { if (alvo) posicionar(alvo, false); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (alvo) posicionar(alvo, false); });
+    return { ir: function (a) { posicionar(a, true); }, alvo: function () { return alvo; } };
+  }
+
+  /* luz que acompanha o ponteiro dentro do vidro */
+  if (window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.addEventListener('pointermove', function (e) {
+      var el = e.target.closest && e.target.closest('.btn, .pilula, .menu-botao, .fechar, .zap, .pular');
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    }, { passive: true });
+  }
+
+  /* refração nas bordas (Chrome e Edge no computador): cada elemento ganha um mapa de deslocamento
+     do tamanho dele, que puxa a imagem de trás para dentro perto da borda, como a borda de uma lente */
+  (function refracao() {
+    var marcas = navigator.userAgentData && navigator.userAgentData.brands;
+    var chromium = !!(marcas && marcas.some(function (m) { return /Chromium/.test(m.brand); }));
+    var mq = window.matchMedia && matchMedia('(pointer: fine) and (min-width: 1000px)');
+    var semTransparencia = window.matchMedia && matchMedia('(prefers-reduced-transparency: reduce)').matches;
+    if (!CONFIG.refracao || !chromium || !mq || !mq.matches || semTransparencia || !('ResizeObserver' in window)) return;
+    var defs = document.querySelector('#lq-filtros defs');
+    if (!defs) return;
+    var NS = 'http://www.w3.org/2000/svg', feitos = {};
+    function mapa(w, h, r, b) {
+      var c = document.createElement('canvas'); c.width = w; c.height = h;
+      var x = c.getContext('2d'), im = x.createImageData(w, h), d = im.data;
+      for (var j = 0; j < h; j++) for (var i = 0; i < w; i++) {
+        var px = i + 0.5 - w / 2, py = j + 0.5 - h / 2;
+        var qx = Math.abs(px) - (w / 2 - r), qy = Math.abs(py) - (h / 2 - r);
+        var dentro = -(Math.hypot(Math.max(qx, 0), Math.max(qy, 0)) + Math.min(Math.max(qx, qy), 0) - r);
+        var nx = 0, ny = 0, m = 0;
+        if (qx > 0 && qy > 0) { var l = Math.hypot(qx, qy) || 1; nx = qx / l; ny = qy / l; }
+        else if (qx > qy) nx = 1; else ny = 1;
+        nx *= px < 0 ? -1 : 1; ny *= py < 0 ? -1 : 1;
+        if (dentro >= 0 && dentro < b) { var t = 1 - dentro / b; m = t * t; }
+        var k = (j * w + i) * 4;
+        d[k] = 128 - nx * m * 127; d[k + 1] = 128 - ny * m * 127; d[k + 2] = 128; d[k + 3] = 255;
+      }
+      x.putImageData(im, 0, 0);
+      return c.toDataURL('image/png');
+    }
+    function filtro(w, h, r) {
+      var chave = w + 'x' + h + 'r' + r;
+      if (feitos[chave]) return feitos[chave];
+      var b = Math.max(8, Math.min(22, Math.min(w, h) * 0.32));
+      var f = document.createElementNS(NS, 'filter');
+      f.id = 'lq-' + chave;
+      f.setAttribute('x', '0'); f.setAttribute('y', '0'); f.setAttribute('width', '1'); f.setAttribute('height', '1');
+      f.setAttribute('color-interpolation-filters', 'sRGB');
+      var img = document.createElementNS(NS, 'feImage');
+      img.setAttribute('href', mapa(w, h, r, b)); img.setAttribute('preserveAspectRatio', 'none'); img.setAttribute('result', 'mapa');
+      var desl = document.createElementNS(NS, 'feDisplacementMap');
+      desl.setAttribute('in', 'SourceGraphic'); desl.setAttribute('in2', 'mapa');
+      desl.setAttribute('scale', (b * 1.5).toFixed(1));
+      desl.setAttribute('xChannelSelector', 'R'); desl.setAttribute('yChannelSelector', 'G');
+      f.appendChild(img); f.appendChild(desl); defs.appendChild(f);
+      return (feitos[chave] = 'url(#' + f.id + ')');
+    }
+    function aplicar(el) {
+      var w = el.offsetWidth, h = el.offsetHeight;
+      if (w < 8 || h < 8) return;
+      var r = parseFloat(getComputedStyle(el).borderTopLeftRadius) || 0;
+      r = Math.round(Math.min(r, w / 2, h / 2));
+      el.style.setProperty('--lq', filtro(w, h, r));
+    }
+    var ro = new ResizeObserver(function (lista) { lista.forEach(function (e) { aplicar(e.target); }); });
+    $$('.topo .container, .trilha, .pular, .historia .btn, .zap, .aviso').forEach(function (el) { ro.observe(el); });
+    doc.classList.add('com-refracao');
+  })();
+
+  /* ---------- Passeio em scrollytelling (GSAP ScrollTrigger, com reserva nativa) ----------
+     Cada capítulo tem uma foto em qualidade total fixa no palco; o texto rola por cima
+     e a foto seguinte entra com uma cortina de baixo para cima, presa ao scroll. */
+  var historia = $('#passeio'), palco = $('#palco'), topo = $('#topo');
+  var cenas = $$('.cena'), passos = $$('.passo'), cartoes = $$('.passo .cartao');
+  var botoesTrilha = $$('.trilha button'), barraTrilha = $('.trilha-progresso');
+  var N = cenas.length, ativo = -1;
+  var lenteTrilha = criarLente($('.trilha'), true);
+
+  function ativar(i) {
+    if (i === ativo) return;
+    ativo = i;
+    cenas.forEach(function (c, k) { c.classList.toggle('ativa', k === i); });
+    botoesTrilha.forEach(function (b, k) {
+      if (k === i) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+    });
+    palco.classList.toggle('no-fim', i === N - 1);
+    lenteTrilha.ir(botoesTrilha[i]);
+  }
+  function progressoTrilha(p) {
+    barraTrilha.style.transform = 'scaleY(' + clamp(p) + ')';
+    palco.classList.toggle('saindo', p > 0.985);
+  }
+  function topoDoPasso(i) { return passos[i].getBoundingClientRect().top + scrollY; }
+  botoesTrilha.forEach(function (b, i) {
+    b.addEventListener('click', function () {
+      scrollTo({ top: topoDoPasso(i) + 2, behavior: reduz ? 'auto' : 'smooth' });
+    });
+  });
+  ativar(0);
+
+  function iniciarGSAP() {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
+    doc.classList.add('com-gsap');
+
+    cenas.forEach(function (cena, i) {
+      var img = cena.querySelector('img');
+      /* cortina: a foto do capítulo sobe por cima da anterior */
+      if (i > 0) {
+        gsap.fromTo(cena, { clipPath: 'inset(100% 0% 0% 0%)' }, {
+          clipPath: 'inset(0% 0% 0% 0%)', ease: 'none',
+          scrollTrigger: { trigger: passos[i], start: 'top 88%', end: 'top 18%', scrub: 0.6 }
+        });
+      }
+      /* Ken Burns leve enquanto a foto está em cena */
+      gsap.fromTo(img, { scale: 1.12, yPercent: 1 }, {
+        scale: 1.03, yPercent: -1, ease: 'none',
+        scrollTrigger: { trigger: passos[i], start: i === 0 ? 'top top' : 'top bottom', end: i === N - 1 ? 'bottom bottom' : 'bottom top', scrub: 0.6 }
+      });
+    });
+
+    /* texto do capítulo: aparece ao entrar, some ao sair, sempre preso ao scroll */
+    cartoes.forEach(function (cartao, i) {
+      var tl = gsap.timeline({ scrollTrigger: { trigger: cartao, start: 'top 95%', end: 'bottom 5%', scrub: 0.4 } });
+      if (i === 0) tl.to(cartao, { autoAlpha: 1, duration: 0.75 });
+      else tl.fromTo(cartao, { autoAlpha: 0, y: 64 }, { autoAlpha: 1, y: 0, duration: 0.22, ease: 'power2.out' }).to(cartao, { autoAlpha: 1, duration: 0.53 });
+      if (i < N - 1) tl.to(cartao, { autoAlpha: 0, y: -48, duration: 0.25, ease: 'power2.in' });
+      else tl.to(cartao, { autoAlpha: 1, duration: 0.25 });
+    });
+
+    /* capítulo ativo: trilha, botão "Pular passeio" */
+    passos.forEach(function (p, i) {
+      ScrollTrigger.create({ trigger: p, start: 'top 55%', end: 'bottom 55%', onToggle: function (s) { if (s.isActive) ativar(i); } });
+    });
+    ScrollTrigger.create({
+      trigger: historia, start: 'top top', end: 'bottom bottom',
+      onUpdate: function (s) { progressoTrilha(s.progress); }
+    });
+
+    /* final: o símbolo gira para o lugar e a foto escurece de leve */
+    gsap.fromTo('.passo-fim .cartao img', { rotation: -120, scale: 0.6 }, {
+      rotation: 0, scale: 1, ease: 'none',
+      scrollTrigger: { trigger: '.passo-fim', start: 'top 90%', end: 'top 25%', scrub: 0.6 }
+    });
+    gsap.to('.vinheta', { opacity: 1, ease: 'none', scrollTrigger: { trigger: '.passo-fim', start: 'top 80%', end: 'top 20%', scrub: 0.6 } });
+
+    /* topo sólido e botão do WhatsApp depois do passeio */
+    ScrollTrigger.create({ trigger: '#programas', start: function () { return 'top ' + (topo.offsetHeight + 40) + 'px'; }, end: 'max', toggleClass: { targets: topo, className: 'solido' } });
+    ScrollTrigger.create({ trigger: '#programas', start: 'top 60%', end: 'max', toggleClass: { targets: doc, className: 'ver-zap' } });
+
+    /* seções: sobem ao entrar na tela (partem de um estado visível) */
+    ScrollTrigger.batch('#programas .titulo-secao, #estrutura .titulo-secao, #duvidas .titulo-secao, .programas .programa, .estrutura figure, .valores > *, .duvidas details, .chegar-grade > *', {
+      start: 'top 90%',
+      once: true,
+      onEnter: function (els) {
+        gsap.fromTo(els, { y: 56, opacity: 0.35 }, { y: 0, opacity: 1, duration: 0.9, ease: 'power3.out', stagger: 0.08, overwrite: 'auto' });
+      }
+    });
+    /* fotos com parallax dentro da moldura */
+    gsap.utils.toArray('.estrutura figure img').forEach(function (img) {
+      var moldura = img.closest('figure') || img;
+      gsap.fromTo(img, { yPercent: -6, scale: 1.14 }, {
+        yPercent: 6, scale: 1.14, ease: 'none',
+        scrollTrigger: { trigger: moldura, start: 'top bottom', end: 'bottom top', scrub: true }
+      });
+    });
+
+    /* fontes e imagens mudam alturas: recalcula as posições */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ScrollTrigger.refresh(); });
+    addEventListener('load', function () { ScrollTrigger.refresh(); });
+  }
+
+  /* ===== Condutor nativo (sem GSAP ou com movimento reduzido): troca suave das fotos ===== */
+  function iniciarNativo() {
+    if ('IntersectionObserver' in window) {
+      var olho = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (e) { if (e.isIntersecting) ativar(passos.indexOf(e.target)); });
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      passos.forEach(function (p) { olho.observe(p); });
+    }
+    function medir() {
+      var r = historia.getBoundingClientRect();
+      progressoTrilha(-r.top / Math.max(1, r.height - innerHeight));
+      topo.classList.toggle('solido', r.bottom <= topo.offsetHeight + 40);
+      doc.classList.toggle('no-passeio', r.bottom > innerHeight * 0.6);
+    }
+    medir();
+    addEventListener('scroll', medir, { passive: true });
+    addEventListener('resize', medir);
+  }
+
+  if (!reduz && window.gsap && window.ScrollTrigger) {
+    try { iniciarGSAP(); }
+    catch (erro) {
+      /* se algo falhar no GSAP, desfaz e usa o condutor nativo */
+      try { ScrollTrigger.getAll().forEach(function (s) { s.kill(true); }); gsap.set(cenas.concat(cartoes), { clearProps: 'all' }); gsap.set('.cena img', { clearProps: 'all' }); } catch (e) {}
+      doc.classList.remove('com-gsap');
+      iniciarNativo();
+    }
+  }
+  else iniciarNativo();
+
+  /* ---------- Pedidos pelo WhatsApp ---------- */
+  function val(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+  function num(id, min) { var v = parseInt(val(id), 10); if (isNaN(v)) v = min || 0; return Math.max(min || 0, v); }
+  function data(v) {
+    if (!v) return 'a combinar';
+    var p = v.split('-');
+    var d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return d.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' });
+  }
+  var ultimoTotal = null;
+  var MENSAGENS = {
+    dayuse: function () {
+      var a = num('du-adultos', 1), c = num('du-criancas'), b = num('du-bebes');
+      var total = a * CONFIG.precos[0].valor + c * CONFIG.precos[1].valor + b * CONFIG.precos[2].valor;
+      if (total !== ultimoTotal) {
+        $('#du-estimativa').innerHTML = 'Estimativa: <b>' + brl(total) + '</b> pelos valores de referência.';
+        var b = $('#du-estimativa b');
+        if (ultimoTotal !== null) { b.classList.remove('troca'); void b.offsetWidth; b.classList.add('troca'); }
+        ultimoTotal = total;
+      }
+      return 'Olá! Vim pelo site e quero fazer *day use* na Estância das Águas.\n\n' +
+        '• Data: ' + data(val('du-data')) + '\n' +
+        '• Adultos: ' + a + '\n' +
+        '• Crianças de 5 a 11 anos: ' + c + '\n' +
+        '• Crianças até 4 anos: ' + b + '\n\n' +
+        'Podem confirmar a disponibilidade e o valor?';
+    },
+    hospedagem: function () {
+      return 'Olá! Vim pelo site e quero me *hospedar* na Estância das Águas.\n\n' +
+        '• Entrada: ' + data(val('ho-entrada')) + '\n' +
+        '• Saída: ' + data(val('ho-saida')) + '\n' +
+        '• Adultos: ' + num('ho-adultos', 1) + '\n' +
+        '• Crianças: ' + num('ho-criancas') + '\n\n' +
+        'Quais acomodações estão disponíveis?';
+    },
+    eventos: function () {
+      return 'Olá! Vim pelo site e quero fazer um *evento* na Estância das Águas.\n\n' +
+        '• Tipo: ' + val('ev-tipo') + '\n' +
+        '• Data: ' + data(val('ev-data')) + '\n' +
+        '• Convidados: ' + num('ev-convidados', 1) + '\n\n' +
+        'Podem me passar as opções?';
+    },
+    retiros: function () {
+      var n = num('re-noites');
+      return 'Olá! Vim pelo site e quero organizar um *retiro* na Estância das Águas.\n\n' +
+        '• Grupo: ' + val('re-grupo') + '\n' +
+        '• Chegada: ' + data(val('re-chegada')) + '\n' +
+        '• Duração: ' + (n === 0 ? 'só o dia' : n + (n === 1 ? ' noite' : ' noites')) + '\n' +
+        '• Pessoas: ' + num('re-pessoas', 1) + '\n\n' +
+        'Podem me passar as opções?';
+    }
+  };
+  var hoje = new Date(); hoje.setMinutes(hoje.getMinutes() - hoje.getTimezoneOffset());
+  var hojeISO = hoje.toISOString().slice(0, 10);
+  $$('input[type="date"]').forEach(function (i) { i.min = hojeISO; });
+
+  function mascara(el) { el.classList.toggle('corta', el.scrollHeight - el.clientHeight - el.scrollTop > 4); }
+  function atualizar(form) {
+    var msg = MENSAGENS[form.dataset.tipo]();
+    form.querySelector('[data-previa]').textContent = msg;
+    form.querySelector('[data-enviar]').href = zap(msg);
+    mascara(form.querySelector('.previa'));
+  }
+  $$('.previa').forEach(function (el) { el.addEventListener('scroll', function () { mascara(el); }, { passive: true }); });
+  $$('form[data-tipo]').forEach(function (form) {
+    form.addEventListener('submit', function (e) { e.preventDefault(); });
+    form.addEventListener('input', function () { atualizar(form); });
+    form.addEventListener('change', function () { atualizar(form); });
+    atualizar(form);
+  });
+
+  function abrir(id) {
+    var d = document.getElementById('dlg-' + id);
+    if (!d) return;
+    var form = d.querySelector('form[data-tipo]');
+    if (form) atualizar(form);
+    if (typeof d.showModal === 'function') d.showModal(); else d.setAttribute('open', '');
+    var pv = d.querySelector('.previa'); if (pv) mascara(pv);
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-abrir]');
+    if (a) { e.preventDefault(); abrir(a.dataset.abrir); return; }
+    var f = e.target.closest('[data-fechar]');
+    if (f) { var dlg = f.closest('dialog'); if (dlg) dlg.close(); }
+  });
+  $$('dialog').forEach(function (d) {
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  });
+
+  /* ---------- Menu do celular e seção atual na barra ---------- */
+  var botaoMenu = $('.menu-botao'), gaveta = $('#dlg-menu');
+  botaoMenu.addEventListener('click', function () { botaoMenu.setAttribute('aria-expanded', 'true'); });
+  gaveta.addEventListener('close', function () { botaoMenu.setAttribute('aria-expanded', 'false'); });
+  $$('.gaveta nav a').forEach(function (a) { a.addEventListener('click', function () { gaveta.close(); }); });
+  var linksSecao = $$('.topo nav a, .gaveta nav a');
+  var navTopo = $('.topo nav'), lenteTopo = criarLente(navTopo, false), linkAtual = null;
+  function marcar(id) {
+    linkAtual = null;
+    linksSecao.forEach(function (a) {
+      if (id && a.getAttribute('href') === '#' + id) {
+        a.setAttribute('aria-current', 'true');
+        if (navTopo.contains(a)) linkAtual = a;
+      }
+      else a.removeAttribute('aria-current');
+    });
+    if (!navTopo.matches(':hover')) lenteTopo.ir(linkAtual);
+  }
+  /* no computador a lente segue o mouse e volta para a seção atual ao sair */
+  $$('.topo nav a').forEach(function (a) {
+    a.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') lenteTopo.ir(a); });
+    a.addEventListener('focus', function () { lenteTopo.ir(a); });
+    a.addEventListener('blur', function () { lenteTopo.ir(linkAtual); });
+  });
+  navTopo.addEventListener('pointerleave', function () { lenteTopo.ir(linkAtual); });
+  if ('IntersectionObserver' in window) {
+    var vigia = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) { if (e.isIntersecting) marcar(e.target.id === 'passeio' ? null : e.target.id); });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['passeio', 'programas', 'estrutura', 'valores', 'como-chegar', 'duvidas'].forEach(function (id) {
+      var el = document.getElementById(id); if (el) vigia.observe(el);
+    });
+  }
+
+  /* ---------- Aviso de cookies (LGPD) ---------- */
+  var CHAVE = 'estancia-cookies-v1';
+  function lerEscolha() { try { return JSON.parse(localStorage.getItem(CHAVE)); } catch (e) { return null; } }
+  function carregarScriptsOpcionais() {
+    /* Ponto único para Meta Pixel ou Analytics no futuro.
+       Só roda depois do aceite em "Medição de visitas e anúncios". Hoje não há nada instalado. */
+  }
+  function aplicar(escolha) { if (escolha && escolha.medicao) carregarScriptsOpcionais(); }
+  function salvar(escolha) {
+    escolha.em = new Date().toISOString();
+    try { localStorage.setItem(CHAVE, JSON.stringify(escolha)); } catch (e) {}
+    doc.classList.remove('com-aviso');
+    aplicar(escolha);
+  }
+  var escolha = lerEscolha();
+  if (escolha) aplicar(escolha); else doc.classList.add('com-aviso');
+  $$('[data-cookies]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var acao = b.dataset.cookies;
+      if (acao === 'aceitar') salvar({ medicao: true });
+      else if (acao === 'recusar') salvar({ medicao: false });
+      else { var atual = lerEscolha(); $('#ck-medicao').checked = !!(atual && atual.medicao); $('#dlg-cookies').showModal(); }
+    });
+  });
+  $('#salvar-preferencias').addEventListener('click', function () {
+    salvar({ medicao: $('#ck-medicao').checked });
+    $('#dlg-cookies').close();
+  });
+  $('#reabrir-aviso').addEventListener('click', function () {
+    var atual = lerEscolha(); $('#ck-medicao').checked = !!(atual && atual.medicao); $('#dlg-cookies').showModal();
+  });
+})();
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@ test('página inicial abre na raiz, sem erros no console e sem terceiros', async
   page.on('response', (r) => { if (r.status() >= 400) erros.push(r.status() + ' ' + r.url()); });
 
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Seu dia de parque aquático em Ilhéus');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pousada e parque aquático em Ilhéus');
   await expect(page.locator('html')).toHaveClass(/com-gsap/);
   await page.evaluate(() => document.fonts.ready);
   expect(await page.evaluate(() => document.fonts.check('800 20px "Plus Jakarta Sans"'))).toBe(true);
@@ -22,7 +22,7 @@ test('página inicial abre na raiz, sem erros no console e sem terceiros', async
 
   // os diálogos de pedido continuam abrindo
   await page.evaluate(() => scrollTo(0, 0));
-  await page.locator('.topo [data-abrir="dayuse"]').click();
+  await page.locator('.passo-inicio [data-abrir="dayuse"]').click();
   await expect(page.locator('#dlg-dayuse')).toBeVisible();
 
   expect(externos).toEqual([]);

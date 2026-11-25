@@ -10,12 +10,43 @@
 .comodidades li .icone{width:20px;height:20px;margin-top:1px;color:var(--azul);--traco:2.5}
 .comodidades li small{display:block;color:var(--suave);font-size:14px}
 
+/* Seção de hospedagem: texto à esquerda, calendário à direita */
+.hospedagem-grade{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:40px;align-items:start}
+/* celular: o calendário sobe para logo abaixo do título; o resto do texto vai para depois dele */
+@media (max-width:960px){
+  .hospedagem-grade{grid-template-columns:1fr;gap:0}
+  .hospedagem-grade > div{display:contents}
+  .hospedagem-grade .titulo-secao{order:1;margin-bottom:20px!important}
+  .hospedagem-grade .cal-cartao{order:2;margin-bottom:24px}
+  .hospedagem-grade .hosp-passos{display:none}
+  .hospedagem-grade .hosp-inclui{order:3}
+  .hospedagem-grade .nota{order:4}
+  .hospedagem-grade .pilula{order:5;justify-self:start}
+}
+.hosp-passos{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
+.hosp-passos li{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500}
+.hosp-passos b{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--marinho);color:var(--branco);font-size:14px;font-weight:800}
+.hosp-inclui{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.hosp-inclui li{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px 0 10px;border-radius:999px;background:var(--claro-turquesa);font-size:14.5px;font-weight:600}
+.hosp-inclui .icone{width:18px;height:18px;color:var(--azul);--traco:2.6}
+.cal-cartao{display:grid;gap:16px;padding:22px;border-radius:22px;background:var(--areia);border:1px solid var(--linha);box-shadow:0 20px 40px -28px rgb(11 42 91 / .45);min-width:0}
+.cal-cartao > *{min-width:0}
+.cal-cartao .btn{width:100%}
+.cal-cartao .btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;transform:none}
+.cal-mensagem summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--suave);min-height:32px}
+.cal-mensagem .previa{margin-top:8px}
+.acoes-secao{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.passo .acoes .btn{min-height:50px}
+@media (max-width:560px){.acoes-secao .btn{flex:1 1 100%}}
+
 /* Calendário */
 .calendario{display:grid;gap:14px}
 .calendario[hidden],.cal-livres[hidden],[data-datas-nativas][hidden]{display:none}
 .cal-topo{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.cal-topo strong{font-size:18px;font-weight:800;letter-spacing:-0.02em}
 .cal-nav[disabled]{opacity:.35;cursor:default}
+.cal-meses{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:22px}
+.cal-mes{min-width:0}
+.cal-mes > strong{display:block;text-align:center;font-size:18px;font-weight:800;letter-spacing:-0.02em;margin-bottom:6px}
 .cal-grade{width:100%;border-collapse:separate;border-spacing:4px 4px;table-layout:fixed;margin:0}
 .calendario > *{min-width:0}
 .calendario select{width:100%;min-width:0}
@@ -52,4 +83,4 @@
 .cal-opcao b{display:block;font-size:16px;line-height:1.25}
 .cal-opcao small{display:block;font-size:13.5px;color:var(--suave);line-height:1.35}
 .cal-aviso{font-size:14px;color:var(--suave)}
-@media (max-width:420px){.dlg{padding:22px 18px}.cal-grade{border-spacing:3px}.cal-dia{font-size:14px;border-radius:10px}}
+@media (max-width:420px){.cal-cartao{padding:16px 12px}.cal-legenda{font-size:12.5px;gap:6px 10px}.cal-grade{border-spacing:3px}.cal-dia{font-size:14px;border-radius:10px}}

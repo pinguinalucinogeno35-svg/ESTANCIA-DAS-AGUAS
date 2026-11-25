@@ -8,7 +8,7 @@ Site, reservas online e aplicativo do administrador da Estância das Águas (Ilh
 
 - **Página inicial** (`public/index.html`): o site aprovado, servido na raiz como arquivo estático, sem passar pelo React. A fonte e o GSAP são servidos pelo próprio site.
 - **Aplicativo do administrador** (`/admin`): login e as cinco telas (ainda vazias), liberadas conforme o perfil. `dono` vê tudo; `portaria` vê só Hoje e Portaria.
-- **Calendário de hospedagem**: no diálogo Hospedagem da página inicial, mostra os dias livres e os reservados (em vermelho) e as acomodações disponíveis nas datas escolhidas. O pedido ainda segue pelo WhatsApp; o pagamento do sinal entra na etapa 5.
+- **Calendário de hospedagem**: seção própria logo depois do passeio (`#hospedagem`), com os dias livres e os reservados (em vermelho) e as acomodações disponíveis nas datas escolhidas. A hospedagem é a prioridade comercial do cliente: vem antes do day use no topo, no início e nos programas. Todas as seções têm os botões "Reserve agora" (hospedagem) e "Vamos de day use". O pedido ainda segue pelo WhatsApp; o pagamento do sinal entra na etapa 5.
 - **Banco** (`supabase/migrations/`): todas as tabelas, restrições e Row Level Security.
 - `site_v4/` guarda o site original intacto, só para comparação visual. Não é publicado.
 

@@ -6,7 +6,7 @@ function mais(iso: string, n: number) {
   return new Date(Date.UTC(a, m - 1, d + n)).toISOString().slice(0, 10);
 }
 async function dia(page: Page, iso: string) {
-  const botao = page.locator(`#ho-dias [data-dia="${iso}"]`);
+  const botao = page.locator(`#ho-meses [data-dia="${iso}"]`);
   for (let i = 0; i < 3 && (await botao.count()) === 0; i++) await page.getByRole('button', { name: 'Próximo mês' }).click();
   return botao;
 }
@@ -27,10 +27,14 @@ test('calendário de hospedagem: reservados em vermelho, escolha de datas e acom
   await page.goto('/');
   await page.evaluate(() => localStorage.setItem('estancia-cookies-v1', '{"medicao":false}'));
   await page.reload();
-  await page.evaluate(() => document.querySelector<HTMLElement>('[data-abrir="hospedagem"]')!.click());
-  const dlg = page.locator('#dlg-hospedagem');
-  await expect(dlg).toBeVisible();
+  // o botão do topo leva para a seção de hospedagem, que vem logo depois do passeio
+  await page.locator('.topo a.btn', { hasText: 'Reserve agora' }).click();
+  const dlg = page.locator('#hospedagem');
   await expect(page.locator('#ho-calendario')).toBeVisible();
+  await expect(dlg).toBeInViewport();
+  const enviar = dlg.locator('[data-enviar]');
+  await expect(enviar).toHaveText('Reserve agora');
+  await expect(enviar).toHaveAttribute('aria-disabled', 'true');
   await expect(page.locator('#ho-entrada')).toBeHidden();
   await expect(page.locator('#ho-resumo')).toHaveText('Toque no dia de entrada.');
 
@@ -61,15 +65,16 @@ test('calendário de hospedagem: reservados em vermelho, escolha de datas e acom
   const opcoes = page.locator('#ho-livres .cal-opcao b');
   await expect(opcoes).toHaveText(['Chalé de exemplo 1', 'Chalé de exemplo 2', 'Apartamento de exemplo 1']);
   await page.locator('#ho-livres .cal-opcao', { hasText: 'Apartamento de exemplo 1' }).click();
-  const previa = dlg.locator('[data-previa]');
-  await expect(previa).toContainText('- Acomodação: Apartamento de exemplo 1');
-  await expect(dlg.locator('[data-enviar]')).toHaveAttribute('href', /wa\.me\/5573991500002\?text=.*Apartamento/);
+  await expect(dlg.locator('[data-previa]')).toContainText('- Acomodação: Apartamento de exemplo 1');
+  await expect(enviar).not.toHaveAttribute('aria-disabled', 'true');
+  await expect(enviar).toHaveAttribute('href', /wa\.me\/5573991500002\?text=.*Apartamento/);
 
-  // filtro por acomodação muda o que fica vermelho
-  await page.locator('#ho-filtro').selectOption({ label: 'Chalé de exemplo 1 (até 4 pessoas)' });
-  await expect(page.locator('#ho-resumo')).toHaveText('Toque no dia de entrada.');
-  await expect(await dia(page, mais(hoje, 3))).toHaveClass(/ocupado/);
-  await expect(await dia(page, mais(hoje, 6))).toHaveClass(/livre/);
+  // com mais gente, só aparecem as acomodações que comportam o grupo
+  await page.locator('#ho-adultos').fill('5');
+  await expect(opcoes).toHaveText(['Chalé de exemplo 2']);
+  await expect(dlg.locator('[data-previa]')).toContainText('- Acomodação: Chalé de exemplo 2');
+  await page.locator('#ho-adultos').fill('9');
+  await expect(dlg.locator('.cal-aviso')).toContainText('comporta 9 pessoas');
 
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   expect(await dlg.evaluate((el) => el.scrollWidth <= el.clientWidth + 1)).toBe(true);
@@ -79,7 +84,7 @@ test('calendário de hospedagem: reservados em vermelho, escolha de datas e acom
 test('sem a rota de disponibilidade, os campos de data comuns continuam funcionando', async ({ page }) => {
   await page.route('**/api/hospedagem/disponibilidade', (r) => r.fulfill({ status: 503, contentType: 'application/json', body: '{"erro":"x"}' }));
   await page.goto('/');
-  await page.evaluate(() => document.querySelector<HTMLElement>('[data-abrir="hospedagem"]')!.click());
+  await page.locator('#hospedagem').scrollIntoViewIfNeeded();
   await expect(page.locator('#ho-entrada')).toBeVisible();
   await expect(page.locator('#ho-calendario')).toBeHidden();
 });
@@ -90,4 +95,19 @@ test('a página mostra as comodidades informadas pelo cliente', async ({ page })
   for (const texto of ['Piscinas de água mineral', '2 toboáguas de 70 metros', 'Playground', 'Salão de jogos', 'Churrasqueira gourmet', 'Campinho de futebol', 'Quadra de vôlei', 'Ar-condicionado', 'Frigobar', 'Wifi', 'Bar e restaurante', 'Para até 600 pessoas']) {
     await expect(sec.locator('.comodidades')).toContainText(texto);
   }
+});
+
+test('todas as seções têm os botões Reserve agora e Vamos de day use', async ({ page }) => {
+  await page.goto('/');
+  for (const id of ['passeio', 'hospedagem', 'programas', 'estrutura', 'valores', 'como-chegar', 'duvidas']) {
+    const sec = page.locator('#' + id);
+    expect(await sec.getByText('Reserve agora').count(), id + ': Reserve agora').toBeGreaterThan(0);
+    expect(await sec.getByText('Vamos de day use').count(), id + ': Vamos de day use').toBeGreaterThan(0);
+  }
+  // hospedagem vem antes do day use: é a primeira seção depois do passeio e o primeiro cartão de programa
+  expect(await page.evaluate(() => document.querySelector('#passeio')!.nextElementSibling!.id)).toBe('hospedagem');
+  await expect(page.locator('.programas .programa h3').first()).toHaveText('Hospedagem');
+  // o botão de day use abre o pedido de day use
+  await page.locator('#duvidas').getByText('Vamos de day use').click();
+  await expect(page.locator('#dlg-dayuse')).toBeVisible();
 });

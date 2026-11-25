@@ -2,49 +2,33 @@
 @font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-display:swap;font-weight:200 800;src:url(/fontes/plus-jakarta-sans-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-display:swap;font-weight:200 800;src:url(/fontes/plus-jakarta-sans-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{
-  --marinho:#0B2A5B;
-  --azul:#0E6BD8;
-  --turquesa:#19C3D6;
-  --sol:#FFC21A;
-  --laranja:#FF7A2F;
+  /* Paleta medida na logo oficial (foto da placa, com o branco corrigido). Ajustar quando chegar o arquivo original da arte. */
+  --marinho:#2E3568;                     /* arco da logo */
+  --ceu:#37A0DD;                         /* fundo azul da logo */
+  --azul:#1B74BC;                        /* o azul da logo escurecido, para texto e links com contraste */
+  --turquesa:#37A0DD;
+  --sol:#F9C846;                         /* amarelo do letreiro */
+  --laranja:#F0863C;                     /* meio do degradê do letreiro */
+  --vermelho:#DC3F3A;                    /* vermelho do letreiro e das listras dos toboáguas */
+  --verde:#4E8A3A;                       /* morros */
   --areia:#FFF7EA;
-  --suave:#3D4F6E;
-  --linha:rgb(11 42 91 / 0.12);          /* 2. borda translúcida: se adapta ao fundo claro, branco ou creme */
-  --linha-campo:rgb(11 42 91 / 0.5);     /* campos: contraste 3:1 exigido para bordas de formulário */
-  /* tons claros derivados (reserva em hex; em OKLCH logo abaixo) */
-  --claro-sol:#FFF0C2;
-  --claro-turquesa:#D5F3F7;
-  --claro-laranja:#FFE3D2;
-  --claro-azul:#DCE8FB;
+  --suave:#4A5278;
+  --linha:rgb(46 53 104 / 0.12);
+  --linha-campo:rgb(46 53 104 / 0.5);
+  --claro-sol:#FFF1C9;
+  --claro-turquesa:#D9EEFA;
+  --claro-laranja:#FDE3D3;
+  --claro-azul:#DCEAF8;
+  --claro-verde:#E2F0D6;
   --claro-areia:#FBF2E1;
-  --sol-hover:#FFD24D;
-  --marinho-elevado:#16386F;
-  --azul-profundo:#123C80;
+  --sol-hover:#FBD56B;
+  --marinho-elevado:#3A4381;
+  --azul-profundo:#2B4C96;
   --branco:#FFFFFF;
   --f-display:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --f-corpo:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --raio:18px;
   --topo:72px;
   color-scheme:light;
-}
-/* 3. Paleta em OKLCH: mesmas cores da logo, e os tons claros com a MESMA luminosidade percebida */
-@supports (color: oklch(0% 0 0)){
-  :root{
-    --marinho:oklch(29.5% 0.095 259.5);
-    --azul:oklch(54.3% 0.185 257);
-    --turquesa:oklch(74.8% 0.125 207.5);
-    --sol:oklch(84.6% 0.169 84.9);
-    --laranja:oklch(72.5% 0.182 46);
-    --areia:oklch(97.9% 0.019 80.1);
-    --suave:oklch(42.6% 0.057 261);
-    --claro-sol:oklch(95% 0.06 84.9);
-    --claro-turquesa:oklch(95% 0.035 207.5);
-    --claro-laranja:oklch(95% 0.035 46);
-    --claro-azul:oklch(95% 0.03 257);
-    --claro-areia:oklch(96.5% 0.025 80.1);
-    --sol-hover:oklch(88.5% 0.15 84.9);
-    --marinho-elevado:oklch(35% 0.1 259.5);
-    --azul-profundo:oklch(40% 0.14 258);
-  }
 }
 :root{--mola:cubic-bezier(.3,1.35,.45,1);--mola-suave:cubic-bezier(.25,1.2,.4,1)}

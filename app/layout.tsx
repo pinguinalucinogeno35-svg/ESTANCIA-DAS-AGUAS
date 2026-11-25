@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Estância das Águas',
   robots: { index: false },
 };
-export const viewport: Viewport = { themeColor: '#0B2A5B', width: 'device-width', initialScale: 1 };
+export const viewport: Viewport = { themeColor: '#2E3568', width: 'device-width', initialScale: 1 };
 
 // Envolve só as telas novas (reserva e administrador). A página inicial é o arquivo estático public/index.html.
 export default function Raiz({ children }: { children: ReactNode }) {

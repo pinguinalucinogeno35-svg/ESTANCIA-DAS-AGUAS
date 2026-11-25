@@ -7,7 +7,7 @@
 .comodidades .programa{gap:14px}
 .comodidades ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .comodidades li{display:flex;gap:10px;align-items:flex-start;font-size:16px;color:var(--marinho);line-height:1.4}
-.comodidades li .icone{width:20px;height:20px;margin-top:1px;color:var(--azul);--traco:2.5}
+.comodidades li .icone{width:20px;height:20px;margin-top:1px;color:var(--verde);--traco:2.5}
 .comodidades li small{display:block;color:var(--suave);font-size:14px}
 
 /* Seção de hospedagem: texto à esquerda, calendário à direita */
@@ -27,9 +27,9 @@
 .hosp-passos li{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:500}
 .hosp-passos b{flex:0 0 auto;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--marinho);color:var(--branco);font-size:14px;font-weight:800}
 .hosp-inclui{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.hosp-inclui li{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px 0 10px;border-radius:999px;background:var(--claro-turquesa);font-size:14.5px;font-weight:600}
-.hosp-inclui .icone{width:18px;height:18px;color:var(--azul);--traco:2.6}
-.cal-cartao{display:grid;gap:16px;padding:22px;border-radius:22px;background:var(--areia);border:1px solid var(--linha);box-shadow:0 20px 40px -28px rgb(11 42 91 / .45);min-width:0}
+.hosp-inclui li{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px 0 10px;border-radius:999px;background:var(--claro-verde);font-size:14.5px;font-weight:600}
+.hosp-inclui .icone{width:18px;height:18px;color:var(--verde);--traco:2.6}
+.cal-cartao{display:grid;gap:16px;padding:22px;border-radius:22px;background:var(--areia);border:1px solid var(--linha);box-shadow:0 20px 40px -28px rgb(46 53 104 / .45);min-width:0}
 .cal-cartao > *{min-width:0}
 .cal-cartao .btn{width:100%}
 .cal-cartao .btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed;transform:none}
@@ -59,7 +59,7 @@
 /* reservado: vermelho, com um risco para não depender só da cor */
 .cal-dia.ocupado{background:var(--claro-ocupado);border-color:var(--borda-ocupado);color:var(--ocupado);cursor:not-allowed}
 .cal-dia.ocupado::after{content:"";position:absolute;left:22%;right:22%;top:50%;height:2px;border-radius:2px;background:currentColor;transform:rotate(-20deg);opacity:.8}
-.cal-dia.passado{background:transparent;color:rgb(11 42 91 / .32);cursor:default}
+.cal-dia.passado{background:transparent;color:rgb(46 53 104 / .32);cursor:default}
 .cal-dia.fora{opacity:.4;cursor:not-allowed}
 /* dia em que só dá para sair (a noite já está reservada por outra pessoa) */
 .cal-dia.so-saida{cursor:pointer;background:linear-gradient(135deg,var(--branco) 50%,var(--claro-ocupado) 50%);color:var(--marinho)}
@@ -78,9 +78,10 @@
 .cal-livres{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
 .cal-livres legend{padding:0;margin-bottom:8px;font-size:14px;font-weight:700}
 .cal-opcao{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px;border-radius:12px;border:1.5px solid var(--linha-campo);background:var(--branco);cursor:pointer}
-.cal-opcao:has(input:checked){border-color:var(--azul);box-shadow:0 0 0 3px rgba(14,107,216,.2)}
+.cal-opcao:has(input:checked){border-color:var(--azul);box-shadow:0 0 0 3px rgba(27,116,188,.2)}
 .cal-opcao input{width:22px;height:22px;flex:0 0 auto;accent-color:var(--azul)}
 .cal-opcao b{display:block;font-size:16px;line-height:1.25}
 .cal-opcao small{display:block;font-size:13.5px;color:var(--suave);line-height:1.35}
 .cal-aviso{font-size:14px;color:var(--suave)}
 @media (max-width:420px){.cal-cartao{padding:16px 12px}.cal-legenda{font-size:12.5px;gap:6px 10px}.cal-grade{border-spacing:3px}.cal-dia{font-size:14px;border-radius:10px}}
+.programas .programa .btn{padding:0 14px;gap:8px;white-space:nowrap}

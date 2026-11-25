@@ -88,5 +88,6 @@ A pousada usa o Hospedin como sistema de gestão da hospedagem. O site já está
 
 - A política de privacidade ainda descreve o site antigo (sem coleta de dados). Ela será reescrita na etapa 6 e, junto com a regra de cancelamento, **precisa de revisão do cliente ou de um profissional jurídico** antes de entrar no ar.
 - Os textos "o maior da região" e "aprovada pelo DNPM" foram publicados como o cliente informou. O DNPM foi substituído pela ANM em 2018: confirme com o cliente a redação e se há documento que comprove.
+- **Logo e cores:** o emblema (`public/img/simbolo.svg`) e as logos horizontais foram redesenhados em vetor a partir de uma foto recortada da placa oficial, e a paleta de `public/css/tokens.css` foi medida nessa foto. São aproximações: a parte de baixo da logo (o letreiro "Águas") não aparecia na foto. Substituir pelo arquivo original da arte quando o cliente enviar.
 - As acomodações do calendário são de exemplo. Quantidade, nomes e capacidade reais dependem do cliente ou do Hospedin.
 - Nada foi publicado. Não há projeto criado na Vercel nem no Supabase.

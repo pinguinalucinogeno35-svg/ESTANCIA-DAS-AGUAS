@@ -86,9 +86,12 @@ describe('Row Level Security', () => {
   });
 
   it('dono lê tudo o que as telas usam', async () => {
+    // o banco local pode ter outros administradores (os dos testes de navegador): compara com o total real
+    const total = (await c.query('select count(*)::int as n from public.admin_perfis')).rows[0].n;
+    expect(total).toBeGreaterThanOrEqual(3);
     await como(c, 'authenticated', dono);
     for (const t of [...SO_DONO, ...DOS_DOIS]) expect([t, await linhas(t)]).toSatisfy(([, n]: [string, number | string]) => typeof n === 'number' && n > 0);
-    expect(await linhas('admin_perfis')).toBe(3);
+    expect(await linhas('admin_perfis')).toBe(total);
     expect(await linhas('push_inscricoes')).toBe(1);
   });
 

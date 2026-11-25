@@ -1,0 +1,55 @@
+/* Calendário de hospedagem e lista de comodidades. Usa as variáveis de /css/tokens.css. */
+:root{--ocupado:#B3261E;--claro-ocupado:#FBDCD8;--borda-ocupado:#E0736B}
+
+/* Comodidades: três cartões no mesmo estilo dos programas */
+.comodidades{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+@media (max-width:900px){.comodidades{grid-template-columns:1fr}}
+.comodidades .programa{gap:14px}
+.comodidades ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.comodidades li{display:flex;gap:10px;align-items:flex-start;font-size:16px;color:var(--marinho);line-height:1.4}
+.comodidades li .icone{width:20px;height:20px;margin-top:1px;color:var(--azul);--traco:2.5}
+.comodidades li small{display:block;color:var(--suave);font-size:14px}
+
+/* Calendário */
+.calendario{display:grid;gap:14px}
+.calendario[hidden],.cal-livres[hidden],[data-datas-nativas][hidden]{display:none}
+.cal-topo{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cal-topo strong{font-size:18px;font-weight:800;letter-spacing:-0.02em}
+.cal-nav[disabled]{opacity:.35;cursor:default}
+.cal-grade{width:100%;border-collapse:separate;border-spacing:4px 4px;table-layout:fixed;margin:0}
+.calendario > *{min-width:0}
+.calendario select{width:100%;min-width:0}
+.cal-grade th{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--suave);padding:2px 0 4px}
+.cal-grade td{padding:0}
+.cal-dia{position:relative;display:grid;place-items:center;width:100%;min-height:44px;border-radius:12px;border:1.5px solid transparent;background:var(--branco);
+  color:var(--marinho);font:700 15px/1 var(--f-corpo);font-variant-numeric:tabular-nums;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.cal-dia.livre{border-color:var(--linha)}
+.cal-dia.livre:hover{border-color:var(--azul);background:var(--claro-azul)}
+/* reservado: vermelho, com um risco para não depender só da cor */
+.cal-dia.ocupado{background:var(--claro-ocupado);border-color:var(--borda-ocupado);color:var(--ocupado);cursor:not-allowed}
+.cal-dia.ocupado::after{content:"";position:absolute;left:22%;right:22%;top:50%;height:2px;border-radius:2px;background:currentColor;transform:rotate(-20deg);opacity:.8}
+.cal-dia.passado{background:transparent;color:rgb(11 42 91 / .32);cursor:default}
+.cal-dia.fora{opacity:.4;cursor:not-allowed}
+/* dia em que só dá para sair (a noite já está reservada por outra pessoa) */
+.cal-dia.so-saida{cursor:pointer;background:linear-gradient(135deg,var(--branco) 50%,var(--claro-ocupado) 50%);color:var(--marinho)}
+.cal-dia.so-saida::after{display:none}
+.cal-dia.entre,.cal-dia.entre:hover{background:var(--claro-sol);border-color:var(--sol);color:var(--marinho)}
+.cal-dia.ponta,.cal-dia.ponta:hover{background:var(--marinho);border-color:var(--marinho);color:var(--branco)}
+.cal-dia.ponta::after{display:none}
+.cal-dia.hoje:not(.ponta){box-shadow:inset 0 -3px 0 var(--turquesa)}
+.cal-legenda{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;font-weight:500;color:var(--suave)}
+.cal-legenda li{display:flex;align-items:center;gap:8px}
+.cal-amostra{position:relative;width:18px;height:18px;border-radius:6px;border:1.5px solid var(--linha-campo);background:var(--branco)}
+.cal-amostra.ocupado{background:var(--claro-ocupado);border-color:var(--borda-ocupado);color:var(--ocupado)}
+.cal-amostra.ocupado::after{content:"";position:absolute;left:3px;right:3px;top:50%;height:2px;margin-top:-1px;background:currentColor;transform:rotate(-20deg)}
+.cal-amostra.escolha{background:var(--marinho);border-color:var(--marinho)}
+.cal-resumo{font-size:15px;font-weight:700;color:var(--marinho);min-height:24px}
+.cal-livres{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
+.cal-livres legend{padding:0;margin-bottom:8px;font-size:14px;font-weight:700}
+.cal-opcao{display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px;border-radius:12px;border:1.5px solid var(--linha-campo);background:var(--branco);cursor:pointer}
+.cal-opcao:has(input:checked){border-color:var(--azul);box-shadow:0 0 0 3px rgba(14,107,216,.2)}
+.cal-opcao input{width:22px;height:22px;flex:0 0 auto;accent-color:var(--azul)}
+.cal-opcao b{display:block;font-size:16px;line-height:1.25}
+.cal-opcao small{display:block;font-size:13.5px;color:var(--suave);line-height:1.35}
+.cal-aviso{font-size:14px;color:var(--suave)}
+@media (max-width:420px){.dlg{padding:22px 18px}.cal-grade{border-spacing:3px}.cal-dia{font-size:14px;border-radius:10px}}

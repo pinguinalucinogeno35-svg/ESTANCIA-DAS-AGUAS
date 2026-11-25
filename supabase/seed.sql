@@ -12,6 +12,20 @@ update public.configuracoes set
   regra_cancelamento = '[EXEMPLO] Regra de cancelamento, remarcação e chuva a definir pelo cliente.',
   dados_de_exemplo = true;
 
-insert into public.chales (nome, capacidade, tarifa_centavos, ordem) values
-  ('Chalé de exemplo 1', 4, 35000, 1),
-  ('Chalé de exemplo 2', 6, 45000, 2);
+-- EXEMPLO: quantidade, nomes, capacidade e tarifa das acomodações ainda não foram informados pelo cliente.
+insert into public.chales (nome, tipo, capacidade, tarifa_centavos, ordem) values
+  ('Chalé de exemplo 1', 'chale', 4, 35000, 1),
+  ('Chalé de exemplo 2', 'chale', 6, 45000, 2),
+  ('Apartamento de exemplo 1', 'apartamento', 2, 25000, 3),
+  ('Apartamento de exemplo 2', 'apartamento', 3, 28000, 4);
+
+-- EXEMPLO: alguns períodos ocupados, para o calendário do site ter o que mostrar em desenvolvimento.
+insert into public.chale_ocupacoes (chale_id, periodo, origem, motivo)
+select c.id, daterange(current_date + o.ini, current_date + o.fim), 'bloqueio', '[EXEMPLO]'
+from public.chales c
+join (values
+  ('Chalé de exemplo 1', 3, 6), ('Chalé de exemplo 1', 12, 14),
+  ('Chalé de exemplo 2', 4, 8),
+  ('Apartamento de exemplo 1', 4, 6), ('Apartamento de exemplo 1', 20, 23),
+  ('Apartamento de exemplo 2', 2, 6), ('Apartamento de exemplo 2', 12, 13)
+) as o(nome, ini, fim) on o.nome = c.nome;

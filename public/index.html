@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Estância das Águas</title>
-<meta name="description" content="Day use, hospedagem, eventos e retiros com piscinas, tobogã e coqueiros na Praia do Sul, km 11, em Ilhéus, Bahia. Reserve pelo WhatsApp.">
+<meta name="description" content="Day use, hospedagem com café da manhã, eventos e retiros na Praia do Sul, km 11, em Ilhéus, Bahia. Piscinas de água mineral, dois toboáguas de 70 metros, bar e restaurante.">
 <meta name="theme-color" content="#0B2A5B">
 <link rel="preload" href="/fontes/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/reservas.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Estância das Águas","description":"Pousada com parque aquático: day use, hospedagem, eventos e retiros em Ilhéus, Bahia.","address":{"@type":"PostalAddress","streetAddress":"Praia do Sul, km 11","addressLocality":"Ilhéus","addressRegion":"BA","addressCountry":"BR"},"telephone":"+55 73 99150-0002","sameAs":["https://www.instagram.com/pousada.estanciadasaguas/"]}
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Estância das Águas","description":"Pousada com parque aquático: day use, hospedagem em chalés e apartamentos com café da manhã, eventos e retiros em Ilhéus, Bahia.","amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Piscinas de água mineral","value":true},{"@type":"LocationFeatureSpecification","name":"Toboáguas","value":true},{"@type":"LocationFeatureSpecification","name":"Café da manhã","value":true},{"@type":"LocationFeatureSpecification","name":"Wifi","value":true},{"@type":"LocationFeatureSpecification","name":"Ar-condicionado","value":true},{"@type":"LocationFeatureSpecification","name":"Bar e restaurante","value":true},{"@type":"LocationFeatureSpecification","name":"Salão de eventos","value":true},{"@type":"LocationFeatureSpecification","name":"Playground","value":true}],"address":{"@type":"PostalAddress","streetAddress":"Praia do Sul, km 11","addressLocality":"Ilhéus","addressRegion":"BA","addressCountry":"BR"},"telephone":"+55 73 99150-0002","sameAs":["https://www.instagram.com/pousada.estanciadasaguas/"]}
 </script>
 <style>
 /* Paleta e tipografia da logo "Tobogã do Sol". Layout: passeio em tela cheia guiado pelo scroll, depois seções de decisão em fundo claro. */
@@ -410,6 +411,12 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
   <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></symbol>
   <symbol id="i-chale" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5h4v5"/></symbol>
   <symbol id="i-festa" viewBox="0 0 24 24"><path d="M12 3c3.3 0 5.5 2.6 5.5 5.8 0 3.6-2.8 6.7-5.5 6.7S6.5 12.4 6.5 8.8C6.5 5.6 8.7 3 12 3z"/><path d="M11 15.4l-.8 1.6h3.6l-.8-1.6"/><path d="M12 17c0 2-1.5 2.5-1.5 4"/></symbol>
+  <symbol id="i-anterior" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+  <symbol id="i-proximo" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-certo" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-gota" viewBox="0 0 24 24"><path d="M12 3.5c3 3.6 5.5 6.6 5.5 9.7a5.5 5.5 0 0 1-11 0c0-3.1 2.5-6.1 5.5-9.7z"/></symbol>
+  <symbol id="i-talheres" viewBox="0 0 24 24"><path d="M7 3.5v6.5a2 2 0 0 0 4 0V3.5M9 12v8.5"/><path d="M16.5 3.5c-1.7 1.2-2.5 3.3-2.5 5.5 0 1.9.9 3 2.5 3.4v8.1"/></symbol>
+  <symbol id="i-cama" viewBox="0 0 24 24"><path d="M3.5 18.5V6.5M3.5 15h17v3.5"/><path d="M20.5 15v-2.5a3 3 0 0 0-3-3H11V15"/><circle cx="7.2" cy="11.5" r="1.8"/></symbol>
   <symbol id="i-grupo" viewBox="0 0 24 24"><circle cx="8.5" cy="8.5" r="3"/><circle cx="16.5" cy="9.5" r="2.5"/><path d="M3 19.5c.6-3.3 2.8-5 5.5-5s4.9 1.7 5.5 5"/><path d="M14.5 14.6c.6-.2 1.3-.3 2-.3 2.3 0 4 1.4 4.5 4.2"/></symbol>
 </svg>
 
@@ -486,7 +493,7 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
         <div class="cartao">
           <span class="rotulo">02 · Tobogã</span>
           <h2>A descida mais esperada do dia</h2>
-          <p>Sobe a escada amarela e desce de novo. E de novo.</p>
+          <p>Dois toboáguas de 70 metros, o maior da região. Sobe a escada e desce de novo.</p>
         </div>
       </article>
       <article class="passo">
@@ -506,8 +513,8 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
       <article class="passo">
         <div class="cartao">
           <span class="rotulo">05 · Hospedagem</span>
-          <h2>Chalés a poucos passos da água</h2>
-          <p>Fique para dormir e acorde pertinho da piscina.</p>
+          <h2>Chalés e apartamentos a poucos passos da água</h2>
+          <p>Com café da manhã, TV, ar-condicionado, frigobar e wifi.</p>
         </div>
       </article>
       <article class="passo">
@@ -549,13 +556,15 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
         <article class="programa">
           <div class="marca-programa" style="background:var(--claro-turquesa)"><svg class="icone" aria-hidden="true"><use href="#i-chale"/></svg></div>
           <h3>Hospedagem</h3>
-          <p>Chalés pertinho das piscinas para esticar o passeio.</p>
-          <button class="btn btn-marinho" type="button" data-abrir="hospedagem">Montar pedido</button>
+          <p>Chalés e apartamentos com café da manhã, pertinho das piscinas.</p>
+          <div class="precos">TV · ar-condicionado · frigobar · wifi</div>
+          <button class="btn btn-marinho" type="button" data-abrir="hospedagem">Ver datas livres</button>
         </article>
         <article class="programa">
           <div class="marca-programa" style="background:var(--claro-laranja)"><svg class="icone" aria-hidden="true"><use href="#i-festa"/></svg></div>
           <h3>Eventos</h3>
-          <p>Aniversários e comemorações com a piscina como cenário.</p>
+          <p>Casamentos, aniversários, igrejas e confraternizações.</p>
+          <div class="precos">Salão para até 600 pessoas · bar e restaurante</div>
           <button class="btn btn-marinho" type="button" data-abrir="eventos">Montar pedido</button>
         </article>
         <article class="programa">
@@ -572,14 +581,49 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
     <div class="container">
       <div class="titulo-secao">
         <h2>O que você encontra aqui</h2>
-        <p>Fotos do mesmo caminho do passeio, tiradas na Estância.</p>
+        <p>Lazer para o dia inteiro, quartos equipados e estrutura para a sua festa.</p>
       </div>
       <div class="estrutura">
-        <figure><img src="img/foto-010.webp" alt="Tobogã azul com escada amarela" loading="lazy"><figcaption><strong>Tobogã</strong><span>Para quem não cansa de descer.</span></figcaption></figure>
-        <figure><img src="img/foto-058.webp" alt="Piscina com brinquedão aquático e coqueiros" loading="lazy"><figcaption><strong>Piscinas e coqueiros</strong><span>Água, sol e palmeira para todo lado.</span></figcaption></figure>
+        <figure><img src="img/foto-010.webp" alt="Tobogã azul com escada amarela" loading="lazy"><figcaption><strong>Toboáguas de 70 metros</strong><span>São dois. O maior da região.</span></figcaption></figure>
+        <figure><img src="img/foto-058.webp" alt="Piscina com brinquedão aquático e coqueiros" loading="lazy"><figcaption><strong>Piscinas de água mineral</strong><span>Água, sol e palmeira para todo lado.</span></figcaption></figure>
         <figure><img src="img/foto-018.webp" alt="Piscina infantil com escorregador colorido" loading="lazy"><figcaption><strong>Piscina infantil</strong><span>Brinquedão com escorregador.</span></figcaption></figure>
         <figure><img src="img/foto-027.webp" alt="Mesas com cadeiras brancas na sombra" loading="lazy"><figcaption><strong>Mesas na sombra</strong><span>Para o almoço e o descanso.</span></figcaption></figure>
-        <figure><img src="img/foto-038.webp" alt="Chalés brancos com telhado de barro" loading="lazy"><figcaption><strong>Chalés</strong><span>Hospedagem dentro da Estância.</span></figcaption></figure>
+        <figure><img src="img/foto-038.webp" alt="Chalés brancos com telhado de barro" loading="lazy"><figcaption><strong>Chalés e apartamentos</strong><span>Hospedagem com café da manhã.</span></figcaption></figure>
+      </div>
+      <div class="comodidades">
+        <article class="programa">
+          <div class="marca-programa" style="background:var(--claro-turquesa)"><svg class="icone" aria-hidden="true"><use href="#i-gota"/></svg></div>
+          <h3>Lazer</h3>
+          <ul>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Piscinas de água mineral<small>Aprovada pelo DNPM</small></span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>2 toboáguas de 70 metros<small>O maior da região</small></span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Playground</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Salão de jogos</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Churrasqueira gourmet</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Campinho de futebol</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Quadra de vôlei</span></li>
+          </ul>
+        </article>
+        <article class="programa">
+          <div class="marca-programa" style="background:var(--claro-sol)"><svg class="icone" aria-hidden="true"><use href="#i-cama"/></svg></div>
+          <h3>Nos quartos</h3>
+          <ul>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Chalés e apartamentos<small>Com café da manhã</small></span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>TV</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Ar-condicionado</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Frigobar</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Wifi</span></li>
+          </ul>
+        </article>
+        <article class="programa">
+          <div class="marca-programa" style="background:var(--claro-laranja)"><svg class="icone" aria-hidden="true"><use href="#i-talheres"/></svg></div>
+          <h3>Serviços e eventos</h3>
+          <ul>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Bar e restaurante</span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Salão de eventos<small>Para até 600 pessoas</small></span></li>
+            <li><svg class="icone" aria-hidden="true"><use href="#i-certo"/></svg><span>Locação do espaço<small>Casamentos, aniversários, igrejas e confraternizações</small></span></li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -634,7 +678,8 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
         <details><summary>Criança paga?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Até 4 anos não paga. De 5 a 11 anos paga meia. Os valores estão na tabela acima.</p></details>
         <details><summary>Como faço a reserva?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Pelo WhatsApp. Escolha o programa, preencha a data e o número de pessoas e a mensagem já sai pronta para enviar.</p></details>
         <details><summary>E se o fim de semana lotar?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Quando lota, a Estância avisa no Instagram e no WhatsApp. Por isso vale reservar antes de sair de casa.</p></details>
-        <details><summary>Vocês fazem eventos e retiros?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Sim. Conte o tipo de evento ou de grupo, a data e quantas pessoas, e a equipe responde com as opções.</p></details>
+        <details><summary>Vocês fazem eventos e retiros?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>Sim. O salão de eventos recebe até 600 pessoas e a Estância aluga o espaço para casamentos, aniversários, igrejas e confraternizações, com bar e restaurante. Conte o tipo de evento ou de grupo, a data e quantas pessoas, e a equipe responde com as opções.</p></details>
+        <details><summary>Como é a hospedagem?<svg class="icone" aria-hidden="true"><use href="#i-baixo"/></svg></summary><p>São chalés e apartamentos com café da manhã. Todos os quartos têm TV, ar-condicionado, frigobar e wifi. No calendário de hospedagem você vê os dias livres e os reservados.</p></details>
       </div>
       <p class="nota" style="margin-top:24px">Ficou outra dúvida?</p>
       <a class="pilula" id="zap-duvida" href="#" target="_blank" rel="noopener" style="margin-top:12px">Chame no WhatsApp<svg class="icone seta" aria-hidden="true"><use href="#i-seta"/></svg></a>
@@ -700,12 +745,32 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
 <dialog id="dlg-hospedagem" aria-labelledby="t-hospedagem">
   <form class="dlg" method="dialog" data-tipo="hospedagem">
     <div class="dlg-cabeca">
-      <div><h2 id="t-hospedagem">Hospedagem</h2><p>Diga as datas e quantas pessoas.</p></div>
+      <div><h2 id="t-hospedagem">Hospedagem</h2><p>Chalés e apartamentos com café da manhã. Escolha as datas e quantas pessoas.</p></div>
       <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
     </div>
+    <div class="calendario" id="ho-calendario" hidden>
+      <div class="campo"><label for="ho-filtro">Acomodação</label><select id="ho-filtro"><option value="">Todas as acomodações</option></select></div>
+      <div class="cal-topo">
+        <button class="fechar cal-nav" type="button" aria-label="Mês anterior"><svg class="icone" aria-hidden="true"><use href="#i-anterior"/></svg></button>
+        <strong id="ho-mes" aria-live="polite"></strong>
+        <button class="fechar cal-nav" type="button" aria-label="Próximo mês"><svg class="icone" aria-hidden="true"><use href="#i-proximo"/></svg></button>
+      </div>
+      <table class="cal-grade" aria-labelledby="ho-mes">
+        <thead><tr><th scope="col" abbr="domingo">dom</th><th scope="col" abbr="segunda">seg</th><th scope="col" abbr="terça">ter</th><th scope="col" abbr="quarta">qua</th><th scope="col" abbr="quinta">qui</th><th scope="col" abbr="sexta">sex</th><th scope="col" abbr="sábado">sáb</th></tr></thead>
+        <tbody id="ho-dias"></tbody>
+      </table>
+      <ul class="cal-legenda">
+        <li><span class="cal-amostra" aria-hidden="true"></span>Livre</li>
+        <li><span class="cal-amostra ocupado" aria-hidden="true"></span>Reservado</li>
+        <li><span class="cal-amostra escolha" aria-hidden="true"></span>Sua estadia</li>
+      </ul>
+      <p class="cal-resumo" id="ho-resumo" role="status"></p>
+      <fieldset class="cal-livres" id="ho-livres" hidden><legend>Disponíveis nessas datas</legend></fieldset>
+    </div>
+    <input type="hidden" id="ho-acomodacao" name="acomodacao">
     <div class="campos">
-      <div class="campo"><label for="ho-entrada">Entrada</label><input type="date" id="ho-entrada" name="entrada"></div>
-      <div class="campo"><label for="ho-saida">Saída</label><input type="date" id="ho-saida" name="saida"></div>
+      <div class="campo" data-datas-nativas><label for="ho-entrada">Entrada</label><input type="date" id="ho-entrada" name="entrada"></div>
+      <div class="campo" data-datas-nativas><label for="ho-saida">Saída</label><input type="date" id="ho-saida" name="saida"></div>
       <div class="campo"><label for="ho-adultos">Adultos</label><input type="number" id="ho-adultos" name="adultos" min="1" max="99" value="2" inputmode="numeric"></div>
       <div class="campo"><label for="ho-criancas">Crianças</label><input type="number" id="ho-criancas" name="criancas" min="0" max="99" value="0" inputmode="numeric"></div>
     </div>
@@ -719,14 +784,14 @@ dialog.gaveta::backdrop{background:rgb(7 29 64 / .32);-webkit-backdrop-filter:no
 <dialog id="dlg-eventos" aria-labelledby="t-eventos">
   <form class="dlg" method="dialog" data-tipo="eventos">
     <div class="dlg-cabeca">
-      <div><h2 id="t-eventos">Eventos</h2><p>Conte o que você quer comemorar.</p></div>
+      <div><h2 id="t-eventos">Eventos</h2><p>Salão para até 600 pessoas. Conte o que você quer comemorar.</p></div>
       <button class="fechar" type="button" data-fechar aria-label="Fechar"><svg class="icone" aria-hidden="true"><use href="#i-fechar"/></svg></button>
     </div>
     <div class="campos">
       <div class="campo inteiro"><label for="ev-tipo">Tipo de evento</label>
-        <select id="ev-tipo" name="tipo"><option>Aniversário</option><option>Confraternização</option><option>Casamento</option><option>Outro</option></select></div>
+        <select id="ev-tipo" name="tipo"><option>Casamento</option><option>Aniversário</option><option>Evento de igreja</option><option>Confraternização</option><option>Outro</option></select></div>
       <div class="campo"><label for="ev-data">Data</label><input type="date" id="ev-data" name="data"></div>
-      <div class="campo"><label for="ev-convidados">Convidados</label><input type="number" id="ev-convidados" name="convidados" min="1" max="2000" value="30" inputmode="numeric"></div>
+      <div class="campo"><label for="ev-convidados">Convidados</label><input type="number" id="ev-convidados" name="convidados" min="1" max="600" value="30" inputmode="numeric"></div>
     </div>
     <div class="previa"><strong>Sua mensagem</strong><span data-previa></span></div>
     <a class="btn btn-sol" data-enviar href="#" target="_blank" rel="noopener"><svg class="icone" aria-hidden="true"><use href="#i-conversa"/></svg>Abrir no WhatsApp</a>
@@ -1115,9 +1180,10 @@ var CONFIG = {
       return 'Olá! Vim pelo site e quero me *hospedar* na Estância das Águas.\n\n' +
         '- Entrada: ' + data(val('ho-entrada')) + '\n' +
         '- Saída: ' + data(val('ho-saida')) + '\n' +
+        (val('ho-acomodacao') ? '- Acomodação: ' + val('ho-acomodacao') + '\n' : '') +
         '- Adultos: ' + num('ho-adultos', 1) + '\n' +
         '- Crianças: ' + num('ho-criancas') + '\n\n' +
-        'Quais acomodações estão disponíveis?';
+        (val('ho-acomodacao') ? 'Podem confirmar a reserva e o valor?' : 'Quais acomodações estão disponíveis?');
     },
     eventos: function () {
       return 'Olá! Vim pelo site e quero fazer um *evento* na Estância das Águas.\n\n' +
@@ -1240,5 +1306,6 @@ var CONFIG = {
   });
 })();
 </script>
+<script type="module" src="/js/hospedagem.js"></script>
 </body>
 </html>
